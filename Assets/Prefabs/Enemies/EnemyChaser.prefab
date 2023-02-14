@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 8895915271411226163}
   - component: {fileID: -1623482468120311615}
   - component: {fileID: 57550913529443366}
-  - component: {fileID: 8653129014289064156}
+  - component: {fileID: 9018333978494819620}
+  - component: {fileID: 939686374206110207}
   m_Layer: 0
   m_Name: EnemyChaser
   m_TagString: Enemy
@@ -148,8 +149,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: -1623482468120311615}
-  speed: 2.5
---- !u!114 &8653129014289064156
+  speed: 3
+--- !u!114 &9018333978494819620
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -162,5 +163,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: cf9ef94a4b30b3c48bfdfd9fbdef2ce6, type: 2}
-  playerController: {fileID: 0}
+  playerController: {fileID: 9037888980196615267, guid: 28ae6f37692a55a4f84e336980297457, type: 3}
   damage: 2
+--- !u!114 &939686374206110207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2442762078158442058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d53209dd27b1c243b4828863ee88dba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 3
+  currentHealth: 0

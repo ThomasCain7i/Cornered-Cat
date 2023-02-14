@@ -8,6 +8,12 @@ public class EnemyAI : MonoBehaviour
     public PlayerController playerController;
     public int damage;
 
+    public void Start()
+    {
+        //Find object that has 
+        GameObject.Find("Player").GetComponent<PlayerController>();
+    }
+
     // Update is called once per frame
     private void Update()
     {

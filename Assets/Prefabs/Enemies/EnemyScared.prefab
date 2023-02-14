@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -4281692458003244278}
   - component: {fileID: 2131992637275761987}
   - component: {fileID: 8305740551746678329}
+  - component: {fileID: -7205543961960907407}
   m_Layer: 0
   m_Name: EnemyScared
   m_TagString: Enemy
@@ -152,5 +153,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: fb54ac947b15593458f9db63cc779124, type: 2}
-  playerController: {fileID: 0}
+  playerController: {fileID: 9037888980196615267, guid: 28ae6f37692a55a4f84e336980297457, type: 3}
   damage: 1
+--- !u!114 &-7205543961960907407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521015608234115878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d53209dd27b1c243b4828863ee88dba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 2
+  currentHealth: 0

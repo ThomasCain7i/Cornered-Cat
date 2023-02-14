@@ -18,8 +18,9 @@ public class Bullet : MonoBehaviour
             case "Wall":
                 Destroy(gameObject);
                 break;
+            // Collision with enemy deal 1 damage and destory
             case "Enemy":
-
+                other.gameObject.GetComponent<EnemyHealth>().TakeDamage(1);
                 Destroy(gameObject);
                 break;
         }
