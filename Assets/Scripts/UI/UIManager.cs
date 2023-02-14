@@ -31,5 +31,6 @@ public class UIManager : MonoBehaviour
     public void GoToMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
+        Time.timeScale = 1;
     }
 }
