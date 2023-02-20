@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: cf9ef94a4b30b3c48bfdfd9fbdef2ce6, type: 2}
-  playerController: {fileID: 9037888980196615267, guid: 28ae6f37692a55a4f84e336980297457, type: 3}
+  playerController: {fileID: 0}
   damage: 2
 --- !u!114 &939686374206110207
 MonoBehaviour:
