@@ -27,9 +27,13 @@ public class PlayerController : MonoBehaviour
     Material mDefault;
     SpriteRenderer sRend;
 
+    //HealthBar
+    public HealthBar healthBar;
+
     private void Start()
     {
         currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
         sRend = GetComponent<SpriteRenderer>();
         mDefault = sRend.material;
         mWhite = Resources.Load("mWhite", typeof(Material)) as Material;
@@ -53,6 +57,8 @@ public class PlayerController : MonoBehaviour
 
         StartCoroutine("Flash");
         InvinciblePeriod();
+
+        healthBar.SetHealth(currentHealth);
 
         if(currentHealth <= 0)
         {
