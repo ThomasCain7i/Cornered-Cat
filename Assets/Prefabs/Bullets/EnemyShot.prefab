@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3624000003538330148}
   - component: {fileID: 8144288580237680762}
-  - component: {fileID: -6839952917660548930}
   - component: {fileID: -5959443711051292867}
+  - component: {fileID: -6839952917660548930}
   - component: {fileID: -2300208226295807947}
   m_Layer: 0
   m_Name: EnemyShot
@@ -87,19 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-6839952917660548930
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5195655766338529723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36188c62dd1c5b64aa311f7bedb40b15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
 --- !u!58 &-5959443711051292867
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -116,6 +103,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &-6839952917660548930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5195655766338529723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36188c62dd1c5b64aa311f7bedb40b15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
 --- !u!114 &-2300208226295807947
 MonoBehaviour:
   m_ObjectHideFlags: 0

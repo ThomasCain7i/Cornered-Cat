@@ -7,28 +7,35 @@ using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
-    public static event Action OnPlayerDeath;
+    //Movement
     public float moveSpeed;
     public Rigidbody2D rb;
+
+    //Reference to weapon
     public Weapon weapon;
 
+    //Where is the mouse
     private Vector2 moveDirection;
     private Vector2 mousePosition;
 
     public Camera sceneCamera;
 
+    //Health
     public int maxHealth = 5;
     public int currentHealth;
 
+    //Invincibility after damage
     float invincibeTimer;
     bool invincible = false;
 
+    //Change colour after damage
     Material mWhite;
     Material mDefault;
     SpriteRenderer sRend;
 
-    //HealthBar
+    //HealthBar & DeathMenu
     public HealthBar healthBar;
+    public static event Action OnPlayerDeath;
 
     private void Start()
     {
