@@ -33,16 +33,19 @@ public class TaskPatrol : Node
         Transform wp = _waypoints[_currentWaypointIndex];
         if (Vector2.Distance(_transform.position, wp.position) < 0.01f)
         {
+            //if current position = current set waypoint get next waypoint
             _transform.position = wp.position;
             _waitCounter = 0f;
             _waiting = true;
 
+            //The next waypoint is the next one in the index
             _currentWaypointIndex = (_currentWaypointIndex + 1) % _waypoints.Length;
         }
         else
         {
+            //Move the summoner towards the next waypoint at speed x delta time
             _transform.position = Vector2.MoveTowards(_transform.position, wp.position, SummonerBT.speed * Time.deltaTime);
-            _transform.LookAt(wp.position);
+            //_transform.LookAt(wp.position);
         }
 
         state = NodeState.RUNNING;
