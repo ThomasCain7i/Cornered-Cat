@@ -121,6 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 5236267694211342753}
+  damage: 0
 --- !u!61 &1629449324861631678
 BoxCollider2D:
   m_ObjectHideFlags: 0

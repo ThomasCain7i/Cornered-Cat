@@ -62,6 +62,8 @@ public class PlayerController : MonoBehaviour
     {
         currentHealth -= amount;
 
+        FindObjectOfType<AudioManager>().Play("PlayerHurt");
+
         StartCoroutine("Flash");
         InvinciblePeriod();
 
@@ -72,6 +74,7 @@ public class PlayerController : MonoBehaviour
             currentHealth = 0;
             Time.timeScale = 0;
             OnPlayerDeath?.Invoke();
+            FindObjectOfType<AudioManager>().Play("PlayerDeath");
         }
     }
 
@@ -114,6 +117,7 @@ public class PlayerController : MonoBehaviour
         if(Input.GetMouseButtonDown(0))
         {
             weapon.Fire();
+            FindObjectOfType<AudioManager>().Play("PlayerFire");
         }
 
         //Get postion of mouse relitive to camera location and dont move super fast when travelling diagonally
