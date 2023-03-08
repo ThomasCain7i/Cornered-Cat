@@ -1,16 +1,17 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class WaveSpawner : MonoBehaviour
 {
-    public enum SpawnState { SPAWNING, WAITING, COUNTING};
+    public enum SpawnState { SPAWNING, WAITING, COUNTING };
 
     [System.Serializable]
     public class Wave
     {
         public string name;
-        public Transform enemy;
+        public Transform[] enemy;
         public int count;
         public float rate;
     }
@@ -24,6 +25,8 @@ public class WaveSpawner : MonoBehaviour
     private float waveCountdown;
 
     private float searchCountdown = 1f;
+
+    public TextMeshProUGUI _waveNumberText;
 
     private SpawnState state = SpawnState.COUNTING;
 
@@ -41,10 +44,10 @@ public class WaveSpawner : MonoBehaviour
 
     void Update()
     {
-        if(state == SpawnState.WAITING)
+        if (state == SpawnState.WAITING)
         {
             //Check if enemies are still alive
-            if(!EnemyIsAlive())
+            if (!EnemyIsAlive())
             {
                 //Begin new wave
                 WaveCompleted();
@@ -54,9 +57,9 @@ public class WaveSpawner : MonoBehaviour
                 return;
             }
         }
-        if(waveCountdown <= 0)
+        if (waveCountdown <= 0)
         {
-            if(state != SpawnState.SPAWNING)
+            if (state != SpawnState.SPAWNING)
             {
                 //Start spawning waves
                 StartCoroutine(SpawnWave(waves[nextWave]));
@@ -104,10 +107,9 @@ public class WaveSpawner : MonoBehaviour
         Debug.Log("Spawining Wave: " + _wave.name);
         state = SpawnState.SPAWNING;
 
-        //How many enemies to spawn
         for (int i = 0; i < _wave.count; i++)
         {
-            SpawnEnemy(_wave.enemy);
+            SpawnEnemy(_wave.enemy[Random.Range(0, _wave.enemy.Length)]);
             yield return new WaitForSeconds(1f / _wave.rate);
         }
 
@@ -117,11 +119,17 @@ public class WaveSpawner : MonoBehaviour
         yield break;
     }
 
-    void SpawnEnemy (Transform _enemy)
+    void SpawnEnemy(Transform _enemy)
     {
         //Spawn enemy
-        Debug.Log("Spawning Enemy: "+ _enemy.name);
-        Transform _spawnPoint = spawnPoints[Random.Range (0, spawnPoints.Length)];
+        Debug.Log("Spawning Enemy: " + _enemy.name);
+        Transform _spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
         Instantiate(_enemy, _spawnPoint.position, _spawnPoint.rotation);
     }
+
+    void OnNewWave(Wave _wave)
+    {
+        //string[] numbers = { "One", "Two", "Three", "Four", "Five" };
+        _waveNumberText.text = "Wave: " + _wave.name + "";	/// I added this line
+	}
 }

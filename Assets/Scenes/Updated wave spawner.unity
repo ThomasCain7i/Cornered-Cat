@@ -700,20 +700,20 @@ MonoBehaviour:
   - waveName: Wave1
     noOfEnemies: 3
     typeOfEnemies:
-    - {fileID: 2442762078158442058, guid: a56907e3121029f4f9cc59d46e19f315, type: 3}
-    - {fileID: 5323507211016217156, guid: 1cca7078565b7864fa6ee81573b3aa9a, type: 3}
-    - {fileID: 521015608234115878, guid: f52594b0a2a8c944ab36e863c9b30393, type: 3}
+    - {fileID: 3080780383693983154, guid: e18e15a9faeacec44b66fc6d77ddcf60, type: 3}
+    - {fileID: 52760017376938599, guid: f89efe243b4fc8f49873b1490598eaa1, type: 3}
+    - {fileID: 2270254088001894936, guid: ad0d8b9337d18614a980fc1b3263f4a3, type: 3}
     spawnInterval: 2
   - waveName: Ska
     noOfEnemies: 5
     typeOfEnemies:
-    - {fileID: 2442762078158442058, guid: a56907e3121029f4f9cc59d46e19f315, type: 3}
-    - {fileID: 521015608234115878, guid: f52594b0a2a8c944ab36e863c9b30393, type: 3}
+    - {fileID: 2270254088001894936, guid: ad0d8b9337d18614a980fc1b3263f4a3, type: 3}
+    - {fileID: 52760017376938599, guid: f89efe243b4fc8f49873b1490598eaa1, type: 3}
     spawnInterval: 1
   - waveName: Final
     noOfEnemies: 1
     typeOfEnemies:
-    - {fileID: 521015608234115878, guid: f52594b0a2a8c944ab36e863c9b30393, type: 3}
+    - {fileID: 3080780383693983154, guid: e18e15a9faeacec44b66fc6d77ddcf60, type: 3}
     spawnInterval: 0
   spawnPoints:
   - {fileID: 1906277554}

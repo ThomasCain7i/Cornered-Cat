@@ -39,8 +39,11 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        //Current health = MaxHealth
         currentHealth = maxHealth;
+
         healthBar.SetMaxHealth(maxHealth);
+
         sRend = GetComponent<SpriteRenderer>();
         mDefault = sRend.material;
         mWhite = Resources.Load("mWhite", typeof(Material)) as Material;
@@ -54,12 +57,13 @@ public class PlayerController : MonoBehaviour
         {
             invincible = false;
         }
-        //Processing Inputs
+        //Processing Inputs from player
         ProcessInputs();
     }
 
     public void TakeDamage(int amount)
     {
+        //Current health - amount = damage
         currentHealth -= amount;
 
         FindObjectOfType<AudioManager>().Play("PlayerHurt");
@@ -67,6 +71,7 @@ public class PlayerController : MonoBehaviour
         StartCoroutine("Flash");
         InvinciblePeriod();
 
+        //Set up for healthbar UI
         healthBar.SetHealth(currentHealth);
 
         if(currentHealth <= 0)
@@ -114,6 +119,7 @@ public class PlayerController : MonoBehaviour
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
 
+        //If press mouse 1 fire
         if(Input.GetMouseButtonDown(0))
         {
             weapon.Fire();
