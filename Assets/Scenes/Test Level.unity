@@ -1088,12 +1088,21 @@ MonoBehaviour:
   - name: MICE
     enemy:
     - {fileID: 3080780383693983152, guid: e18e15a9faeacec44b66fc6d77ddcf60, type: 3}
+    - {fileID: 5822097278806029720, guid: ad0d8b9337d18614a980fc1b3263f4a3, type: 3}
     count: 5
-    rate: 2.5
+    rate: 1
   - name: MICES
     enemy:
     - {fileID: 3080780383693983152, guid: e18e15a9faeacec44b66fc6d77ddcf60, type: 3}
-    count: 5
+    - {fileID: 52760017376938620, guid: f89efe243b4fc8f49873b1490598eaa1, type: 3}
+    count: 6
+    rate: 2
+  - name: MICES
+    enemy:
+    - {fileID: 3080780383693983152, guid: e18e15a9faeacec44b66fc6d77ddcf60, type: 3}
+    - {fileID: 52760017376938620, guid: f89efe243b4fc8f49873b1490598eaa1, type: 3}
+    - {fileID: 5822097278806029720, guid: ad0d8b9337d18614a980fc1b3263f4a3, type: 3}
+    count: 7
     rate: 1
   spawnPoints:
   - {fileID: 1334238299}
