@@ -1,34 +1,31 @@
-/*using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 using BehaviourTree;
 
 public class TaskSummon : Node
 {
-    [System.Serializable]
-    public class Summon
+    public GameObject[] enemies;
+    public Transform[] summon;
+    public float summonCountdown;
+    public TaskSummon (Transform[] waypoints)
     {
-        private Transform transform;
-        public string Name;
-        private Transform[] enemies;
-        public int count;
-        public float rate;
-        private float readyTime = 1f;
-        public bool ready = false;
-        public float readyCounter
-        public float timeBetweenSummon;
+        summon = waypoints;
+    }
+    public override NodeState Evaluate()
+    {
+        summonCountdown -= Time.deltaTime;
 
-        public override NodeState Evaluate()
+        //If countdown = 0
+        if (summonCountdown == 0)
         {
-            if (ready)
-            {
-                readyCounter += Time.deltaTime;
-                if (readyCounter < readyTime)
-                    ready = true;
-            }
-
-            if(transform )
+            //Instantiate enemies
+            Instantiate(enemies, waypoints);
         }
     }
+
+    public override NodeState Evaluate()
+    { }
+
 }
-*/
