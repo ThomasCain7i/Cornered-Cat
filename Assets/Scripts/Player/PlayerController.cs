@@ -37,6 +37,9 @@ public class PlayerController : MonoBehaviour
     public HealthBar healthBar;
     public static event Action OnPlayerDeath;
 
+    //Spider
+    public float webCooldown;
+
     private void Start()
     {
         //Current health = MaxHealth
@@ -59,6 +62,16 @@ public class PlayerController : MonoBehaviour
         }
         //Processing Inputs from player
         ProcessInputs();
+
+        if (webCooldown > 0)
+        {
+            moveSpeed = 4f;
+            webCooldown -= Time.deltaTime;
+        }
+        else
+        {
+            moveSpeed = 8f;
+        }
     }
 
     public void TakeDamage(int amount)
