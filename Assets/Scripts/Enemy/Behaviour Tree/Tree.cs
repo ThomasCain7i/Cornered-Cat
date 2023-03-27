@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace BehaviourTree
+namespace BehaviorTree
 {
     public abstract class Tree : MonoBehaviour
     {
+
         private Node _root = null;
 
         protected void Start()
@@ -20,5 +21,7 @@ namespace BehaviourTree
         }
 
         protected abstract Node SetupTree();
+
     }
+
 }

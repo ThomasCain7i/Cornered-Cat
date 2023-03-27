@@ -37,6 +37,9 @@ public class PlayerController : MonoBehaviour
     public HealthBar healthBar;
     public static event Action OnPlayerDeath;
 
+    //Animation
+    public Animator animator;
+
     private void Start()
     {
         //Current health = MaxHealth
@@ -48,6 +51,7 @@ public class PlayerController : MonoBehaviour
         mDefault = sRend.material;
         mWhite = Resources.Load("mWhite", typeof(Material)) as Material;
     }
+
     // Update is called once per frame
     void Update()
     {
