@@ -17,6 +17,7 @@ public class EnemyRangedMovement : MonoBehaviour
 
     public Transform player;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,7 +41,6 @@ public class EnemyRangedMovement : MonoBehaviour
         {
             transform.position = Vector2.MoveTowards(transform.position, player.position, -speed * Time.deltaTime);
         }
-
 
         if (timeBetweenShots <= 0)
         {
