@@ -169,7 +169,7 @@ MonoBehaviour:
   speed: 8
   stoppingDistance: 10
   retreatDistance: 5
-  startTimeBetweenShots: 3
+  startTimeBetweenShots: 2.5
   projectile: {fileID: 6197507966303308635, guid: 6e814f04fd83bff4b89427463f5c8172, type: 3}
   player: {fileID: 0}
 --- !u!114 &987774355585922126

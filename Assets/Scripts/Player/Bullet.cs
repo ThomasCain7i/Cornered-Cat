@@ -13,7 +13,6 @@ public class Bullet : MonoBehaviour
         //On collision with bullet do:
         switch (other.gameObject.tag)
         {
-
             // Collision with wall just destroy bullet
             case "Wall":
                 Destroy(gameObject);
