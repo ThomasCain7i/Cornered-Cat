@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Wall
   - Enemy
-  - EnemySplit
   layers:
   - Default
   - TransparentFX

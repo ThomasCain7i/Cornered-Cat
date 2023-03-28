@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 
-namespace BehaviorTree
+namespace BehaviourTree
 {
     public enum NodeState
     {
@@ -9,13 +10,12 @@ namespace BehaviorTree
         SUCCESS,
         FAILURE
     }
-
     public class Node
     {
         protected NodeState state;
 
         public Node parent;
-        protected List<Node> children = new List<Node>();
+        protected List<Node> children;
 
         private Dictionary<string, object> _dataContext = new Dictionary<string, object>();
 
@@ -23,7 +23,8 @@ namespace BehaviorTree
         {
             parent = null;
         }
-        public Node(List<Node> children)
+
+        public Node(List<Node>children)
         {
             foreach (Node child in children)
                 _Attach(child);
@@ -49,10 +50,10 @@ namespace BehaviorTree
                 return value;
 
             Node node = parent;
-            while (node != null)
+            while(node != null)
             {
                 value = node.GetData(key);
-                if (value != null)
+                if(value != null)
                     return value;
                 node = node.parent;
             }
@@ -68,15 +69,14 @@ namespace BehaviorTree
             }
 
             Node node = parent;
-            while (node != null)
+            while(node != null)
             {
                 bool cleared = node.ClearData(key);
-                if (cleared)
+                if(cleared)
                     return true;
                 node = node.parent;
             }
             return false;
         }
     }
-
 }

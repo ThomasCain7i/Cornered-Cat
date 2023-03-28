@@ -23,10 +23,6 @@ public class Bullet : MonoBehaviour
                 other.gameObject.GetComponent<EnemyHealth>().TakeDamage(1);
                 Destroy(gameObject);
                 break;
-            case "EnemySplit":
-                other.gameObject.GetComponent<EnemySplit>().TakeDamage(1);
-                Destroy(gameObject);
-                break;
         }
     }
 }

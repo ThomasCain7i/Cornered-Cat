@@ -1,30 +1,14 @@
-using System.Collections.Generic;
-using BehaviorTree;
+using BehaviourTree;
 
 public class SummonerBT : Tree
 {
     public UnityEngine.Transform[] waypoints;
 
-    public static float speed = 2f;
-    public static float fovRange = 6f;
-    public static float attackRange = 1f;
+    public static float speed = 15f;
 
     protected override Node SetupTree()
     {
-        Node root = new Selector(new List<Node>
-        {
-            //new Sequence(new List<Node>
-            //{
-            //    new CheckEnemyInAttackRange(transform),
-            //    new TaskAttack(transform),
-            //}),
-            new Sequence(new List<Node>
-            {
-                new CheckEnemyInFOVRange(transform),
-                new TaskMoveToTarget(transform),
-            }),
-            new TaskPatrol(transform, waypoints),
-        });
+        Node root = new TaskPatrol(transform, waypoints);
 
         return root;
     }
