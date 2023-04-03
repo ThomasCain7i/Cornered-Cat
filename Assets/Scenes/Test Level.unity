@@ -428,15 +428,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.16470589, g: 0.6156863, b: 0.56078434, a: 1}
+  m_Sprite: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &204078044
@@ -539,7 +539,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 0.16470589, g: 0.6156863, b: 0.56078434, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -547,7 +547,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &271146142
@@ -650,7 +650,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 0.16470589, g: 0.6156863, b: 0.56078434, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -658,7 +658,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1001 &409588813
@@ -1198,9 +1198,9 @@ MonoBehaviour:
   waves:
   - name: Mice to meet you
     enemy:
-    - {fileID: 6203611079636139624, guid: 988584b7f8f8ecb469da19d67432d861, type: 3}
+    - {fileID: 3080780383693983152, guid: e18e15a9faeacec44b66fc6d77ddcf60, type: 3}
     count: 3
-    rate: 1.25
+    rate: 1
   - name: Oh rats!
     enemy:
     - {fileID: 3080780383693983152, guid: e18e15a9faeacec44b66fc6d77ddcf60, type: 3}
@@ -1210,21 +1210,38 @@ MonoBehaviour:
   - name: What's up dog?
     enemy:
     - {fileID: 52760017376938620, guid: f89efe243b4fc8f49873b1490598eaa1, type: 3}
-    count: 3
+    - {fileID: 3080780383693983152, guid: e18e15a9faeacec44b66fc6d77ddcf60, type: 3}
+    count: 4
     rate: 1
   - name: Spiders
     enemy:
     - {fileID: 987774355585922132, guid: e8514550da22b4e47a9b33f996d17313, type: 3}
-    count: 3
-    rate: 2
+    - {fileID: 3080780383693983152, guid: e18e15a9faeacec44b66fc6d77ddcf60, type: 3}
+    count: 5
+    rate: 1.5
   - name: Normal
     enemy:
     - {fileID: 3080780383693983152, guid: e18e15a9faeacec44b66fc6d77ddcf60, type: 3}
     - {fileID: 5822097278806029720, guid: ad0d8b9337d18614a980fc1b3263f4a3, type: 3}
-    - {fileID: 987774355585922132, guid: e8514550da22b4e47a9b33f996d17313, type: 3}
+    - {fileID: 8256667676729123529, guid: b31837c88a0771b4f863532fd75ce956, type: 3}
     - {fileID: 52760017376938620, guid: f89efe243b4fc8f49873b1490598eaa1, type: 3}
     count: 6
     rate: 1.25
+  - name: Normal
+    enemy:
+    - {fileID: 3080780383693983152, guid: e18e15a9faeacec44b66fc6d77ddcf60, type: 3}
+    - {fileID: 5822097278806029720, guid: ad0d8b9337d18614a980fc1b3263f4a3, type: 3}
+    - {fileID: 8256667676729123529, guid: b31837c88a0771b4f863532fd75ce956, type: 3}
+    - {fileID: 52760017376938620, guid: f89efe243b4fc8f49873b1490598eaa1, type: 3}
+    - {fileID: 6203611079636139624, guid: 988584b7f8f8ecb469da19d67432d861, type: 3}
+    - {fileID: 987774355585922132, guid: e8514550da22b4e47a9b33f996d17313, type: 3}
+    count: 8
+    rate: 1
+  - name: Boss
+    enemy:
+    - {fileID: 617477262876392351, guid: b94a9ad1a04694244bcefb89664a1119, type: 3}
+    count: 1
+    rate: 1
   spawnPoints:
   - {fileID: 1334238299}
   - {fileID: 89171298}
@@ -1234,7 +1251,7 @@ MonoBehaviour:
   - {fileID: 1378344767}
   - {fileID: 1566734213}
   - {fileID: 1302838635}
-  timeBetweenWaves: 3
+  timeBetweenWaves: 2
   _waveNumberText: {fileID: 0}
 --- !u!1 &607252711
 GameObject:
@@ -1516,7 +1533,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 0.16470589, g: 0.6156863, b: 0.56078434, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1524,7 +1541,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1001 &803726940
@@ -2097,7 +2114,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 0.16470589, g: 0.6156863, b: 0.56078434, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2105,7 +2122,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1302838635 stripped
