@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8144288580237680762}
   - component: {fileID: -6839952917660548930}
   - component: {fileID: -2300208226295807947}
-  - component: {fileID: 7514837868821299157}
+  - component: {fileID: 6684688739960806721}
   m_Layer: 0
   m_Name: EnemyBone
   m_TagString: Enemy
@@ -115,7 +115,7 @@ MonoBehaviour:
   enemyData: {fileID: 11400000, guid: cf9ef94a4b30b3c48bfdfd9fbdef2ce6, type: 2}
   playerController: {fileID: 0}
   damage: 1
---- !u!61 &7514837868821299157
+--- !u!61 &6684688739960806721
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -128,7 +128,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.22132647, y: -0.00000023841858}
+  m_Offset: {x: 0.021532908, y: -0.0035570562}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -139,5 +139,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 8.435967, y: 3.684854}
+  m_Size: {x: 0.8420918, y: 0.36112654}
   m_EdgeRadius: 0
