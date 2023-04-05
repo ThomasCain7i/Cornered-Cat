@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyRangedProjectile : MonoBehaviour
+public class BeetleProjectile : MonoBehaviour
 {
     public float speed;
 

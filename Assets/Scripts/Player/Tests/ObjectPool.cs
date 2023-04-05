@@ -3,43 +3,45 @@ using UnityEngine;
 
 public class ObjectPool : MonoBehaviour
 {
-    // The prefab of the bullet that will be used to create bullets for the pool
-    public GameObject bulletPrefab;
-    // The number of bullets to create in the pool
-    public int numBullets;
-    // A list of all the bullets in the pool
-    private List<GameObject> bullets;
+    public static ObjectPool instance;
 
-    // Called before the first frame update
-    private void Awake()
+    private List<GameObject> pooledObjects = new List<GameObject>();
+
+    private int amountToPool = 8;
+
+    public Transform firePoint;
+    public float fireForce;
+
+    [SerializeField] private GameObject prefab;
+
+    public void Awake()
     {
-        // Create a new list to hold the bullets in the pool
-        bullets = new List<GameObject>();
-        // Create the specified number of bullets and add them to the pool
-        for (int i = 0; i < numBullets; i++)
+        if(instance == null)
         {
-            // Instantiate a new bullet using the bullet prefab and set it to inactive
-            GameObject bullet = Instantiate(bulletPrefab);
-            bullet.SetActive(false);
-            // Add the bullet to the pool
-            bullets.Add(bullet);
+            instance = this;
         }
     }
 
-    // Get a bullet from the pool
-    public GameObject GetBullet()
+    private void Start()
     {
-        // Loop through all the bullets in the pool
-        foreach (GameObject bullet in bullets)
+        for( int i = 0; i < amountToPool; i++)
         {
-            // If the bullet is not active in the hierarchy, it is available to use
-            if (!bullet.activeInHierarchy)
+            GameObject Object = Instantiate(prefab, firePoint.position, firePoint.rotation);
+            Object.GetComponent<Rigidbody2D>().AddForce(firePoint.up * fireForce, ForceMode2D.Impulse);
+            Object.SetActive(false);
+            pooledObjects.Add(Object);
+        }
+    }
+
+    public GameObject GetPooledObject()
+    {
+        for(int i = 0; i < pooledObjects.Count; i++)
+        {
+            if (!pooledObjects[i].activeInHierarchy)
             {
-                // Return the available bullet
-                return bullet;
+                return pooledObjects[i];
             }
         }
-        // If there are no available bullets in the pool, return null
         return null;
     }
 }

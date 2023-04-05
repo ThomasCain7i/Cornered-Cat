@@ -60,6 +60,7 @@ public class PlayerController : MonoBehaviour
         {
             invincible = false;
         }
+
         //Processing Inputs from player
         ProcessInputs();
 

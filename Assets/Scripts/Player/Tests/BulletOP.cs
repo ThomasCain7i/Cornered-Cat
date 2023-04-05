@@ -1,22 +1,27 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class BulletOP : MonoBehaviour
 {
-    // The speed at which the bullet moves
-    public float speed;
     public Rigidbody2D rb;
     public int damage;
-    public GameObject bullet;
-    public Transform firePoint;
-    public float fireForce;
 
-    // Move the bullet forward
-    public void Fire()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        // Set the bullet to active
-        gameObject.SetActive(true);
-
-        // Move the bullet forward
-        bullet.GetComponent<Rigidbody2D>().AddForce(firePoint.up * fireForce, ForceMode2D.Impulse);
+        //On collision with bullet do:
+        switch (other.gameObject.tag)
+        {
+            // Collision with wall just destroy bullet
+            case "Wall":
+                gameObject.SetActive(false);
+                break;
+            // Collision with enemy deal 1 damage and destory
+            case "Enemy":
+                other.gameObject.GetComponent<EnemyHealth>().TakeDamage(1);
+                gameObject.SetActive(false);
+                break;
+        }
     }
 }

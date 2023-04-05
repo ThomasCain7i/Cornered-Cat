@@ -12,12 +12,13 @@ public class PlayerControllerOP : MonoBehaviour
     public Rigidbody2D rb;
 
     //Reference to weapon
-    public Weapon weapon;
+    public ObjectPool objectPool;
 
     //Where is the mouse
     private Vector2 moveDirection;
     private Vector2 mousePosition;
 
+    //Reference to the camera
     public Camera sceneCamera;
 
     //Health
@@ -76,14 +77,19 @@ public class PlayerControllerOP : MonoBehaviour
         // If the fire key is pressed, fire a bullet
         if (Input.GetMouseButtonDown(0))
         {
-            // Get an inactive bullet from the object pool
-//            GameObject bullet = ObjectPool.GetBullet();
-            // If a bullet was obtained from the pool, fire it
-//            if (bullet != null)
-            {
-                // Call the Fire method on the bullet's BulletController component
- //               bullet.GetComponent<BulletOP>().Fire();
-            }
+            Fire();
+        }
+    }
+
+    private void Fire()
+    {
+        GameObject bullet = ObjectPool.instance.GetPooledObject();
+
+        if(bullet != null)
+        {
+            //bullet.transform.position = bulletPosition.position;
+            FindObjectOfType<AudioManager>().Play("PlayerFire");
+            bullet.SetActive(true);
         }
     }
 

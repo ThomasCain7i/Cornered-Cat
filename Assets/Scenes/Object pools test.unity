@@ -3064,15 +3064,23 @@ PrefabInstance:
     - target: {fileID: -5377376599968365650, guid: b66d7b52970aa88439e5cfc23e2dde96, type: 3}
       propertyPath: weapon
       value: 
-      objectReference: {fileID: 804079053}
+      objectReference: {fileID: 0}
     - target: {fileID: -5377376599968365650, guid: b66d7b52970aa88439e5cfc23e2dde96, type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: -5377376599968365650, guid: b66d7b52970aa88439e5cfc23e2dde96, type: 3}
+      propertyPath: objectPool
+      value: 
+      objectReference: {fileID: 804079053}
+    - target: {fileID: -5377376599968365650, guid: b66d7b52970aa88439e5cfc23e2dde96, type: 3}
       propertyPath: sceneCamera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 1150756169127626449, guid: b66d7b52970aa88439e5cfc23e2dde96, type: 3}
+      propertyPath: prefab
+      value: 
+      objectReference: {fileID: 677652270466035179, guid: da59afe80fb548440a14786310e25e24, type: 3}
     - target: {fileID: 7384199854803528934, guid: b66d7b52970aa88439e5cfc23e2dde96, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -3120,6 +3128,10 @@ PrefabInstance:
     - target: {fileID: 7384199854803528938, guid: b66d7b52970aa88439e5cfc23e2dde96, type: 3}
       propertyPath: m_Name
       value: Player OP
+      objectReference: {fileID: 0}
+    - target: {fileID: 7384199856419489124, guid: b66d7b52970aa88439e5cfc23e2dde96, type: 3}
+      propertyPath: m_Name
+      value: Weapon
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7384199854803528936, guid: b66d7b52970aa88439e5cfc23e2dde96, type: 3}
