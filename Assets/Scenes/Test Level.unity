@@ -1198,7 +1198,7 @@ MonoBehaviour:
   waves:
   - name: Mice to meet you
     enemy:
-    - {fileID: 435937775600926757, guid: 4bfcc6389d6458346a80de5fb2884e50, type: 3}
+    - {fileID: 6203611079636139624, guid: 988584b7f8f8ecb469da19d67432d861, type: 3}
     count: 1
     rate: 1
   - name: Oh rats!
@@ -3297,7 +3297,7 @@ PrefabInstance:
       objectReference: {fileID: 2138792217}
     - target: {fileID: 7384199854803528936, guid: 28ae6f37692a55a4f84e336980297457, type: 3}
       propertyPath: maxHealth
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7384199854803528936, guid: 28ae6f37692a55a4f84e336980297457, type: 3}
       propertyPath: sceneCamera
