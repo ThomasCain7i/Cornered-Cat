@@ -37,6 +37,9 @@ public class PlayerController : MonoBehaviour
     public HealthBar healthBar;
     public static event Action OnPlayerDeath;
 
+    //Joystick controls
+    public bool useController;
+
     //Spider
     public float webCooldown;
 
@@ -129,20 +132,23 @@ public class PlayerController : MonoBehaviour
 
     void ProcessInputs()
     {
-        //Movement horizontal and vertical
-        float moveX = Input.GetAxisRaw("Horizontal");
-        float moveY = Input.GetAxisRaw("Vertical");
-
-        //If press mouse 1 fire
-        if(Input.GetMouseButtonDown(0))
+        if(!useController)
         {
-            weapon.Fire();
-            FindObjectOfType<AudioManager>().Play("PlayerFire");
-        }
+            //Movement horizontal and vertical
+            float moveX = Input.GetAxisRaw("Horizontal");
+            float moveY = Input.GetAxisRaw("Vertical");
 
-        //Get postion of mouse relitive to camera location and dont move super fast when travelling diagonally
-        moveDirection = new Vector2(moveX, moveY).normalized;
-        mousePosition = sceneCamera.ScreenToWorldPoint(Input.mousePosition);
+            //If press mouse 1 fire
+            if(Input.GetMouseButtonDown(0))
+            {
+                 weapon.Fire();
+                 FindObjectOfType<AudioManager>().Play("PlayerFire");
+            }
+
+             //Get postion of mouse relitive to camera location and dont move super fast when travelling diagonally
+             moveDirection = new Vector2(moveX, moveY).normalized;
+             mousePosition = sceneCamera.ScreenToWorldPoint(Input.mousePosition);
+        }
     }
 
     void Move()
