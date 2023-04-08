@@ -11,13 +11,7 @@ public class FrogUlt : State
 
     public override State RunCurrentState()
     {
-        if(this.enemyHealth.currentHealth <= 10)
-        {
-            return frogUlt;
-        }
-        else
-        {
-            return this;
-        }
+
+        return this;
     }
 }

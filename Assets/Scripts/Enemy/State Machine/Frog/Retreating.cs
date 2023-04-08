@@ -6,33 +6,24 @@ using UnityEngine;
 //Run away, can be hit
 public class Retreating : State
 {
+    public PhaseState phaseState;
     public FrogUlt frogUlt;
-    public bool isInAttackRange;
-
-    //Retreating
-    public Rigidbody2D rb;
-    public float speed;
-    public float stoppingDistance;
-    public float retreatDistance;
-
-    //Shooting
-    private float timeBetweenShots;
-    public float startTimeBetweenShots;
-    public GameObject projectile;
-    public Transform player;
-
+    public EnemyHealth enemyHealth;
+    public float returnToPhase = 10f;
+    public float startPhaseTimer = 10f;
 
 
     public override State RunCurrentState()
     {
-        if (isInAttackRange)
+        returnToPhase -= Time.deltaTime;
+
+        if (returnToPhase <= 0)
         {
-            return frogUlt;
+            returnToPhase = startPhaseTimer;
+            return phaseState;
         }
         else
         {
-            this.GetComponent<BoxCollider2D>().enabled = true;
-            this.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
             return this;
         }
     }

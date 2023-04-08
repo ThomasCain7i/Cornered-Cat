@@ -6,6 +6,7 @@ using UnityEngine;
 public class PhaseState : State
 {
     public float phaseCountdown = 10f;
+    public float startPhaseCountdown = 10f;
     public Retreating retreating;
 
     public override State RunCurrentState()
@@ -15,12 +16,15 @@ public class PhaseState : State
 
         if(phaseCountdown <= 0)
         {
+            GameObject.FindGameObjectWithTag("Enemy").GetComponent<BoxCollider2D>().enabled = true;
+            GameObject.FindGameObjectWithTag("Enemy").GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
+            phaseCountdown = startPhaseCountdown;
             return retreating;
         }
         else
         {
-            this.GetComponent<BoxCollider2D>().enabled = false;
-            this.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.7f);
+            GameObject.FindGameObjectWithTag("Enemy").GetComponent<BoxCollider2D>().enabled = false;
+            GameObject.FindGameObjectWithTag("Enemy").GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.7f);
             return this;
         }
     }
