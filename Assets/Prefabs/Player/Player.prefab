@@ -107,7 +107,9 @@ MonoBehaviour:
   maxHealth: 5
   currentHealth: 0
   healthBar: {fileID: 0}
+  useController: 0
   webCooldown: 0
+  infectedCooldown: 0
 --- !u!50 &7384199854803528937
 Rigidbody2D:
   serializedVersion: 4
@@ -142,7 +144,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.1397619, y: 0.13976187}
+  m_Offset: {x: 0.13233551, y: 0.12356961}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -153,7 +155,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.656987, y: 1.1826435}
+  m_Size: {x: 1.5084589, y: 1.0070887}
   m_EdgeRadius: 0
 --- !u!1 &7384199855405213252
 GameObject:
