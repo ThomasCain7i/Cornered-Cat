@@ -43,6 +43,9 @@ public class PlayerController : MonoBehaviour
     //Spider
     public float webCooldown;
 
+    //InfectedMouse
+    public float infectedCooldown;
+
     private void Start()
     {
         //Current health = MaxHealth
@@ -67,10 +70,22 @@ public class PlayerController : MonoBehaviour
         //Processing Inputs from player
         ProcessInputs();
 
+        //Spider web side effects
         if (webCooldown > 0)
         {
             moveSpeed = 4f;
             webCooldown -= Time.deltaTime;
+        }
+        else
+        {
+            moveSpeed = 8f;
+        }
+
+        //Infected mouse side effects
+        if(infectedCooldown > 0)
+        {
+            moveSpeed = 0f;
+            infectedCooldown -= Time.deltaTime;
         }
         else
         {
@@ -148,6 +163,21 @@ public class PlayerController : MonoBehaviour
              //Get postion of mouse relitive to camera location and dont move super fast when travelling diagonally
              moveDirection = new Vector2(moveX, moveY).normalized;
              mousePosition = sceneCamera.ScreenToWorldPoint(Input.mousePosition);
+        }
+
+        if(useController)
+        {
+            Vector2 lookDir = new Vector2(Input.GetAxisRaw("RHorizontal"), -Input.GetAxisRaw("RVertical"));
+            float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
+            if (lookDir.sqrMagnitude > 0.0f)
+            {
+                transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            }
+            if(Input.GetKeyDown(KeyCode.Joystick1Button10))
+            {
+                weapon.Fire();
+                FindObjectOfType<AudioManager>().Play("PlayerFire");
+            }
         }
     }
 
