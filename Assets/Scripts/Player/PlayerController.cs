@@ -25,8 +25,7 @@ public class PlayerController : MonoBehaviour
     public int currentHealth;
 
     //Invincibility after damage
-    float invincibeTimer;
-    bool invincible = false;
+    public float invincibeTimer;
 
     //Change colour after damage
     Material mWhite;
@@ -64,7 +63,7 @@ public class PlayerController : MonoBehaviour
 
         if(invincibeTimer <= 0)
         {
-            invincible = false;
+            
         }
 
         //Processing Inputs from player
@@ -91,6 +90,16 @@ public class PlayerController : MonoBehaviour
         {
             moveSpeed = 8f;
         }
+
+        //Invinciable power
+        if (invincibeTimer > 0)
+        {
+            this.GetComponent<BoxCollider2D>().enabled = false;
+        }
+        else
+        {
+            this.GetComponent<BoxCollider2D>().enabled = true;
+        }
     }
 
     public void TakeDamage(int amount)
@@ -101,7 +110,8 @@ public class PlayerController : MonoBehaviour
         FindObjectOfType<AudioManager>().Play("PlayerHurt");
 
         StartCoroutine("Flash");
-        InvinciblePeriod();
+
+        invincibeTimer = 1;
 
         //Set up for healthbar UI
         healthBar.SetHealth(currentHealth);
@@ -112,15 +122,6 @@ public class PlayerController : MonoBehaviour
             Time.timeScale = 0;
             OnPlayerDeath?.Invoke();
             FindObjectOfType<AudioManager>().Play("PlayerDeath");
-        }
-    }
-
-    void InvinciblePeriod()
-    {
-        invincibeTimer = 1;
-        if(invincibeTimer > 0)
-        {
-            invincible = true;
         }
     }
 

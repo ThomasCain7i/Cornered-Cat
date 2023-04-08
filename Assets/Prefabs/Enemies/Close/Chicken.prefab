@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 8256667676729123534}
   - component: {fileID: 8256667676729123533}
   - component: {fileID: 8256667676729123532}
+  - component: {fileID: -5943315994166934920}
   - component: {fileID: 4009433523091724577}
   - component: {fileID: 8525824808158815580}
-  - component: {fileID: -5943315994166934920}
   m_Layer: 0
   m_Name: Chicken
   m_TagString: Enemy
@@ -172,6 +172,20 @@ MonoBehaviour:
   startTimeBetweenShots: 0
   projectile: {fileID: 0}
   player: {fileID: 0}
+--- !u!114 &-5943315994166934920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8256667676729123538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d53209dd27b1c243b4828863ee88dba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 12
+  currentHealth: 0
 --- !u!82 &4009433523091724577
 AudioSource:
   m_ObjectHideFlags: 0
@@ -288,17 +302,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &-5943315994166934920
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8256667676729123538}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d53209dd27b1c243b4828863ee88dba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 12
-  currentHealth: 0
