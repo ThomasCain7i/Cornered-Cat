@@ -100,6 +100,7 @@ GameObject:
   - component: {fileID: 7557067489136956467}
   - component: {fileID: 5087903685161879549}
   - component: {fileID: 1190458570098407398}
+  - component: {fileID: -2482143385470672049}
   m_Layer: 0
   m_Name: Frog
   m_TagString: Enemy
@@ -380,6 +381,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-2482143385470672049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6175726780591606805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e469bd74f38a0cd47993939096e8e32e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 6175726780591606792}
+  speed: 3
+  stoppingDistance: 5
+  retreatDistance: 3
+  startTimeBetweenShots: 2
+  projectile: {fileID: 5195655766338529723, guid: d2d018b5cf5c54d4ab3b7e3393bdfc8b, type: 3}
+  player: {fileID: 0}
 --- !u!1 &6656859795305104587
 GameObject:
   m_ObjectHideFlags: 0
