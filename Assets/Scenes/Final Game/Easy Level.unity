@@ -1198,10 +1198,8 @@ MonoBehaviour:
   waves:
   - name: Mice to meet you
     enemy:
-    - {fileID: 6175726780591606798, guid: 19699fc0694cde543b48694cae343f50, type: 3}
-    - {fileID: 3000955228926807053, guid: 15c9481f45b159a45bc5b7bbe9f62ecf, type: 3}
-    - {fileID: 3080780383693983152, guid: e18e15a9faeacec44b66fc6d77ddcf60, type: 3}
-    count: 5
+    - {fileID: 435937775600926757, guid: 4bfcc6389d6458346a80de5fb2884e50, type: 3}
+    count: 1
     rate: 1
   - name: Oh rats!
     enemy:
