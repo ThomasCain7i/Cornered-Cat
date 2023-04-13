@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
     private bool isInvincible = false;
 
     [SerializeField]
-    private float invincibilityDurationSeconds = 3f;
+    private float invincibilityDurationSeconds = 1.5f;
 
     //Change colour after damage
     Material mWhite;

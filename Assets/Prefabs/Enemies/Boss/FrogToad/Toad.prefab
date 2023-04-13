@@ -1,51 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1169964273824955348
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6160697993659378829}
-  - component: {fileID: 2969588576762524495}
-  m_Layer: 0
-  m_Name: Ultimate
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6160697993659378829
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1169964273824955348}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5042143197324136026}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2969588576762524495
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1169964273824955348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 733366ce59f139040a0f9830194dbc91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  frogUlt: {fileID: 2969588576762524495}
-  enemyHealth: {fileID: 0}
 --- !u!1 &2337637166159660232
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,7 +214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d53209dd27b1c243b4828863ee88dba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 20
+  maxHealth: 35
   currentHealth: 0
 --- !u!114 &1508995044540306480
 MonoBehaviour:
@@ -404,11 +358,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 3000955228926807051}
-  speed: 3
-  stoppingDistance: 5
-  retreatDistance: 3
-  startTimeBetweenShots: 2
-  projectile: {fileID: 5195655766338529723, guid: d2d018b5cf5c54d4ab3b7e3393bdfc8b, type: 3}
+  speed: 5
+  stoppingDistance: 0
+  retreatDistance: 0
+  startTimeBetweenShots: 2.5
+  projectile: {fileID: 5195655766338529723, guid: 840c78b7ed8f50241bc293b13297adc2, type: 3}
   player: {fileID: 0}
 --- !u!1 &3770260182427998521
 GameObject:
@@ -455,8 +409,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   phaseState: {fileID: 6528729292616549261}
-  frogUlt: {fileID: 2969588576762524495}
-  enemyHealth: {fileID: 0}
+  enemyHealth: {fileID: 3000955228926807063}
   returnToPhase: 5
   startPhaseTimer: 5
 --- !u!1 &3971318238938587603
@@ -489,7 +442,6 @@ Transform:
   m_Children:
   - {fileID: 1624893423080039175}
   - {fileID: 3746052574992755039}
-  - {fileID: 6160697993659378829}
   m_Father: {fileID: 3000955228926807053}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

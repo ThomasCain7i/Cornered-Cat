@@ -1369,9 +1369,10 @@ MonoBehaviour:
   waves:
   - name: Mice to meet you
     enemy:
-    - {fileID: 5789032110996524514, guid: a37e15eee40d80f4a860a7599fd2c2ca, type: 3}
-    count: 1
-    rate: 3
+    - {fileID: 6175726780591606798, guid: 19699fc0694cde543b48694cae343f50, type: 3}
+    - {fileID: 3000955228926807053, guid: 15c9481f45b159a45bc5b7bbe9f62ecf, type: 3}
+    count: 4
+    rate: 4
   - name: Oh rats!
     enemy:
     - {fileID: 3080780383693983152, guid: e18e15a9faeacec44b66fc6d77ddcf60, type: 3}
@@ -3664,13 +3665,13 @@ Transform:
   m_Children:
   - {fileID: 1565135790}
   - {fileID: 95785996}
-  - {fileID: 1887700589}
-  - {fileID: 1513162372}
-  - {fileID: 1170729630}
-  - {fileID: 173459140}
   - {fileID: 971604693}
-  - {fileID: 1891584332}
+  - {fileID: 1887700589}
+  - {fileID: 1170729630}
+  - {fileID: 1513162372}
+  - {fileID: 173459140}
   - {fileID: 1480962112}
+  - {fileID: 1891584332}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5759462705969654108}
-  - component: {fileID: 386118426535994417}
+  - component: {fileID: 3471422221255728245}
   m_Layer: 0
   m_Name: Retreat
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 4172678164736593497}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &386118426535994417
+--- !u!114 &3471422221255728245
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,14 +41,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5207209561502816570}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 566ae67f913ad9a4ca80c8024fb4cfda, type: 3}
+  m_Script: {fileID: 11500000, guid: 93479e460992520419c5f3dabcab5b51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  phaseState: {fileID: 2777501180804711310}
-  frogUlt: {fileID: 6135880969094427468}
-  enemyHealth: {fileID: 0}
-  returnToPhase: 10
-  startPhaseTimer: 10
+  phaseState: {fileID: 4958376938875700215}
+  enemyHealth: {fileID: 6175726780591606804}
+  returnToPhase: 5
+  startPhaseTimer: 5
 --- !u!1 &5408236895441904080
 GameObject:
   m_ObjectHideFlags: 0
@@ -79,7 +78,6 @@ Transform:
   m_Children:
   - {fileID: 7682536083858580228}
   - {fileID: 5759462705969654108}
-  - {fileID: 2985372015403756686}
   m_Father: {fileID: 6175726780591606798}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -250,7 +248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d53209dd27b1c243b4828863ee88dba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 20
+  maxHealth: 25
   currentHealth: 0
 --- !u!114 &7557067489136956467
 MonoBehaviour:
@@ -264,7 +262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e09842d662249f42b40c7d240c550a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: {fileID: 2777501180804711310}
+  currentState: {fileID: 4958376938875700215}
 --- !u!95 &5087903685161879549
 Animator:
   serializedVersion: 5
@@ -394,11 +392,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 6175726780591606792}
-  speed: 3
-  stoppingDistance: 5
-  retreatDistance: 3
-  startTimeBetweenShots: 2
-  projectile: {fileID: 5195655766338529723, guid: d2d018b5cf5c54d4ab3b7e3393bdfc8b, type: 3}
+  speed: 6
+  stoppingDistance: 0
+  retreatDistance: 0
+  startTimeBetweenShots: 1.5
+  projectile: {fileID: 5195655766338529723, guid: 7c8ec8b125c24be4fabfd4f3b43627e3, type: 3}
   player: {fileID: 0}
 --- !u!1 &6656859795305104587
 GameObject:
@@ -409,7 +407,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7682536083858580228}
-  - component: {fileID: 2777501180804711310}
+  - component: {fileID: 4958376938875700215}
   m_Layer: 0
   m_Name: Phase
   m_TagString: Untagged
@@ -432,7 +430,7 @@ Transform:
   m_Father: {fileID: 4172678164736593497}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2777501180804711310
+--- !u!114 &4958376938875700215
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -441,55 +439,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6656859795305104587}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32d2d0e05c5a02a4a9464255ab0cd379, type: 3}
+  m_Script: {fileID: 11500000, guid: bb131cb9577917e4dad37cbdc9bb2fb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  phaseCountdown: 10
-  startPhaseCountdown: 10
-  retreating: {fileID: 386118426535994417}
---- !u!1 &7795047497658072023
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2985372015403756686}
-  - component: {fileID: 6135880969094427468}
-  m_Layer: 0
-  m_Name: Ultimate
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2985372015403756686
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7795047497658072023}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4172678164736593497}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6135880969094427468
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7795047497658072023}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 733366ce59f139040a0f9830194dbc91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  frogUlt: {fileID: 6135880969094427468}
-  enemyHealth: {fileID: 0}
+  phaseCountdown: 5
+  startPhaseCountdown: 5
+  retreating: {fileID: 3471422221255728245}

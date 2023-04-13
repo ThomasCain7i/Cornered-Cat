@@ -14,7 +14,7 @@ public class PhaseState : State
         //10 seconds
         phaseCountdown -= Time.deltaTime;
 
-        if(phaseCountdown <= 0)
+        if (phaseCountdown <= 0)
         {
             GameObject.FindGameObjectWithTag("Enemy").GetComponent<BoxCollider2D>().enabled = true;
             GameObject.FindGameObjectWithTag("Enemy").GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
