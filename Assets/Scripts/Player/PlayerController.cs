@@ -25,7 +25,10 @@ public class PlayerController : MonoBehaviour
     public int currentHealth;
 
     //Invincibility after damage
-    public float invincibeTimer;
+    private bool isInvincible = false;
+
+    [SerializeField]
+    private float invincibilityDurationSeconds = 3f;
 
     //Change colour after damage
     Material mWhite;
@@ -59,12 +62,6 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        invincibeTimer -= Time.deltaTime;
-
-        if(invincibeTimer <= 0)
-        {
-            
-        }
 
         //Processing Inputs from player
         ProcessInputs();
@@ -90,28 +87,20 @@ public class PlayerController : MonoBehaviour
         {
             moveSpeed = 8f;
         }
-
-        //Invinciable power
-        if (invincibeTimer > 0)
-        {
-            this.GetComponent<BoxCollider2D>().enabled = false;
-        }
-        else
-        {
-            this.GetComponent<BoxCollider2D>().enabled = true;
-        }
     }
 
     public void TakeDamage(int amount)
     {
+        //If invincible do not deal damage
+        if (isInvincible) return;
+
         //Current health - amount = damage
         currentHealth -= amount;
 
+        //Play audio for damage taken
         FindObjectOfType<AudioManager>().Play("PlayerHurt");
 
         StartCoroutine("Flash");
-
-        invincibeTimer = 1;
 
         //Set up for healthbar UI
         healthBar.SetHealth(currentHealth);
@@ -122,6 +111,26 @@ public class PlayerController : MonoBehaviour
             Time.timeScale = 0;
             OnPlayerDeath?.Invoke();
             FindObjectOfType<AudioManager>().Play("PlayerDeath");
+        }
+        StartCoroutine(BecomeTemporarilyInvincible());
+    }
+
+    private IEnumerator BecomeTemporarilyInvincible()
+    {
+        Debug.Log("Player turned invincible!");
+        isInvincible = true;
+
+        yield return new WaitForSeconds(invincibilityDurationSeconds);
+
+        isInvincible = false;
+        Debug.Log("Player is no longer invincible!");
+    }
+
+    void MethodThatTriggersInvulnerability()
+    {
+        if (!isInvincible)
+        {
+            StartCoroutine(BecomeTemporarilyInvincible());
         }
     }
 

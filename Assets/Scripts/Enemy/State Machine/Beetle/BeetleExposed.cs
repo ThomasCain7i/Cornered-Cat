@@ -15,7 +15,6 @@ public class BeetleExposed : State
         controller = GameObject.Find("Player").GetComponent<PlayerController>();
         if (scaredCooldown > 0)
         {
-            controller.currentHealth += 2;
             enemyRangedMovement.speed = 0f;
             enemyRangedMovement.startTimeBetweenShots = 100;
             GameObject.FindGameObjectWithTag("Enemy").GetComponent<BoxCollider2D>().enabled = false;
