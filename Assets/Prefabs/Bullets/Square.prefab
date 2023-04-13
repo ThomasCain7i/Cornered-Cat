@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8209469108168905760}
   - component: {fileID: 1003769523426117737}
   - component: {fileID: 4738614575180674424}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,6 +99,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToDestroy: 5
+  Slug: {fileID: 0}
+  target: {x: 0, y: 0}
+  speed: 0
 --- !u!114 &4738614575180674424
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -54,7 +54,7 @@ GameObject:
   - component: {fileID: -7102529102487815621}
   - component: {fileID: 8646766250236412909}
   - component: {fileID: 5222472312985583052}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Beetle
   m_TagString: Enemy
   m_Icon: {fileID: 0}

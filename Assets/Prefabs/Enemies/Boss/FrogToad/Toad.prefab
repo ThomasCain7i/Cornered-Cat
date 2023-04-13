@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1624893423080039175}
-  - component: {fileID: 6528729292616549261}
+  - component: {fileID: 8773894593573971681}
   m_Layer: 0
   m_Name: Phase
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 5042143197324136026}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6528729292616549261
+--- !u!114 &8773894593573971681
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,12 +41,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2337637166159660232}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32d2d0e05c5a02a4a9464255ab0cd379, type: 3}
+  m_Script: {fileID: 11500000, guid: bb131cb9577917e4dad37cbdc9bb2fb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   phaseCountdown: 5
   startPhaseCountdown: 5
-  retreating: {fileID: 8740038274902795314}
+  retreating: {fileID: 3494477062897302760}
 --- !u!1 &3000955228926807062
 GameObject:
   m_ObjectHideFlags: 0
@@ -65,7 +65,7 @@ GameObject:
   - component: {fileID: 4218398788029941758}
   - component: {fileID: 7823955331532716005}
   - component: {fileID: -255557463778342856}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Toad
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -228,7 +228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e09842d662249f42b40c7d240c550a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: {fileID: 6528729292616549261}
+  currentState: {fileID: 0}
 --- !u!95 &4218398788029941758
 Animator:
   serializedVersion: 5
@@ -373,7 +373,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3746052574992755039}
-  - component: {fileID: 8740038274902795314}
+  - component: {fileID: 3494477062897302760}
   m_Layer: 0
   m_Name: Retreat
   m_TagString: Untagged
@@ -396,7 +396,7 @@ Transform:
   m_Father: {fileID: 5042143197324136026}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8740038274902795314
+--- !u!114 &3494477062897302760
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -405,10 +405,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3770260182427998521}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 566ae67f913ad9a4ca80c8024fb4cfda, type: 3}
+  m_Script: {fileID: 11500000, guid: 93479e460992520419c5f3dabcab5b51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  phaseState: {fileID: 6528729292616549261}
+  phaseState: {fileID: 8773894593573971681}
+  frogUlt: {fileID: 0}
   enemyHealth: {fileID: 3000955228926807063}
   returnToPhase: 5
   startPhaseTimer: 5

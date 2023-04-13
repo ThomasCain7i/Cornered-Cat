@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 4041637951376377096}
   - component: {fileID: 1863343970722260321}
   - component: {fileID: 4636179732381554569}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: InfectedMouse
   m_TagString: Enemy
   m_Icon: {fileID: 0}

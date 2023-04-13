@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 5841033657026773596}
   - component: {fileID: 4635746789970644892}
   - component: {fileID: 5593599684111220855}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LavaAnt
   m_TagString: Enemy
   m_Icon: {fileID: 0}

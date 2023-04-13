@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 9116343112381533114}
   - component: {fileID: 7238978789151487785}
   - component: {fileID: 9118400676032497713}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Ant
   m_TagString: Enemy
   m_Icon: {fileID: 0}

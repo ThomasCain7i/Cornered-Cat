@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 171645614889209791}
   - component: {fileID: 5617905514853107445}
   - component: {fileID: 5588631257474797245}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bedbug
   m_TagString: Enemy
   m_Icon: {fileID: 0}

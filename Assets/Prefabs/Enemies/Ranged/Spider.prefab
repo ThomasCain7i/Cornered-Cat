@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 987774355585922126}
   - component: {fileID: 2205088378461781927}
   - component: {fileID: 1532112067131028691}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Spider
   m_TagString: Enemy
   m_Icon: {fileID: 0}

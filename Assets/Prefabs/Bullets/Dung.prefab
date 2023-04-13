@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8503008017216397020}
   - component: {fileID: 445048780755827207}
   - component: {fileID: -5115177492680668319}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Dung
   m_TagString: Enemy
   m_Icon: {fileID: 0}
