@@ -157,36 +157,39 @@ public class PlayerController : MonoBehaviour
 
     void ProcessInputs()
     {
-        if(!useController)
+        if (!PauseMenu.isPaused)
         {
-            //Movement horizontal and vertical
-            float moveX = Input.GetAxisRaw("Horizontal");
-            float moveY = Input.GetAxisRaw("Vertical");
-
-            //If press mouse 1 fire
-            if(Input.GetMouseButtonDown(0))
+            if (!useController)
             {
-                 weapon.Fire();
-                 FindObjectOfType<AudioManager>().Play("PlayerFire");
+                //Movement horizontal and vertical
+                float moveX = Input.GetAxisRaw("Horizontal");
+                float moveY = Input.GetAxisRaw("Vertical");
+
+                //If press mouse 1 fire
+                if (Input.GetMouseButtonDown(0))
+                {
+                    weapon.Fire();
+                    FindObjectOfType<AudioManager>().Play("PlayerFire");
+                }
+
+                //Get postion of mouse relitive to camera location and dont move super fast when travelling diagonally
+                moveDirection = new Vector2(moveX, moveY).normalized;
+                mousePosition = sceneCamera.ScreenToWorldPoint(Input.mousePosition);
             }
 
-             //Get postion of mouse relitive to camera location and dont move super fast when travelling diagonally
-             moveDirection = new Vector2(moveX, moveY).normalized;
-             mousePosition = sceneCamera.ScreenToWorldPoint(Input.mousePosition);
-        }
-
-        if(useController)
-        {
-            Vector2 lookDir = new Vector2(Input.GetAxisRaw("RHorizontal"), -Input.GetAxisRaw("RVertical"));
-            float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
-            if (lookDir.sqrMagnitude > 0.0f)
+            if (useController)
             {
-                transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-            }
-            if(Input.GetKeyDown(KeyCode.Joystick1Button10))
-            {
-                weapon.Fire();
-                FindObjectOfType<AudioManager>().Play("PlayerFire");
+                Vector2 lookDir = new Vector2(Input.GetAxisRaw("RHorizontal"), -Input.GetAxisRaw("RVertical"));
+                float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
+                if (lookDir.sqrMagnitude > 0.0f)
+                {
+                    transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+                }
+                if (Input.GetKeyDown(KeyCode.Joystick1Button10))
+                {
+                    weapon.Fire();
+                    FindObjectOfType<AudioManager>().Play("PlayerFire");
+                }
             }
         }
     }
