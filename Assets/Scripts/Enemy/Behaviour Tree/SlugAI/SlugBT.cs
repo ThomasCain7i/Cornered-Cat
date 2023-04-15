@@ -6,7 +6,7 @@ public class SlugBT : Tree
 {
     public UnityEngine.Transform[] waypoints;
 
-    public static float speed = 15f;
+    public static float speed = 35f;
 
     protected override Node SetupTree()
     {

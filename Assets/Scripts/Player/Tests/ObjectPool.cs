@@ -10,7 +10,8 @@ public class ObjectPool : MonoBehaviour
     private int amountToPool = 8;
 
     public Transform firePoint;
-    public float fireForce;
+
+    [SerializeField] private float fireForce = 10.0f;
 
     [SerializeField] private GameObject prefab;
 
@@ -26,6 +27,7 @@ public class ObjectPool : MonoBehaviour
     {
         for( int i = 0; i < amountToPool; i++)
         {
+            Debug.Log("firePoint position: " + firePoint.position);
             GameObject Object = Instantiate(prefab, firePoint.position, firePoint.rotation);
             Object.GetComponent<Rigidbody2D>().AddForce(firePoint.up * fireForce, ForceMode2D.Impulse);
             Object.SetActive(false);

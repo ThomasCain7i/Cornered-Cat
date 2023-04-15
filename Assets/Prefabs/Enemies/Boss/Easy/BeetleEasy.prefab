@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &384003685048437322
+--- !u!1 &129053657184961071
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,7 +8,54 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4572237412855919294}
+  - component: {fileID: 4789007639007288505}
+  - component: {fileID: 1667968295362899079}
+  m_Layer: 0
+  m_Name: Enraged
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4789007639007288505
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129053657184961071}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3322452072852187402}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1667968295362899079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129053657184961071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c709a325fe9f57f4dba59323ef493420, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyRangedMovement: {fileID: 6418073514922419832}
+  beetleScared: {fileID: 8150007097380506032}
+  enemyHealth: {fileID: 866624431090082191}
+--- !u!1 &1458076028669432318
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3322452072852187402}
   m_Layer: 0
   m_Name: States
   m_TagString: Untagged
@@ -16,27 +63,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4572237412855919294
+--- !u!4 &3322452072852187402
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 384003685048437322}
+  m_GameObject: {fileID: 1458076028669432318}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 7615275405747726802}
-  - {fileID: 5989110404590274317}
-  - {fileID: 4497984686333004707}
-  - {fileID: 278297946217388855}
-  - {fileID: 3557437026436961408}
-  m_Father: {fileID: 435937775600926757}
+  - {fileID: 8702790248788587110}
+  - {fileID: 4789007639007288505}
+  - {fileID: 3387951570394861591}
+  - {fileID: 1347939393454227587}
+  - {fileID: 2321305569950076724}
+  m_Father: {fileID: 1685650442576747409}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &435937775600926782
+--- !u!1 &1685650442576747402
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -44,46 +91,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 435937775600926757}
-  - component: {fileID: 435937775600926756}
-  - component: {fileID: 435937775600926755}
-  - component: {fileID: 435937775600926754}
-  - component: {fileID: 4845044247399857101}
-  - component: {fileID: 9043107543213874457}
-  - component: {fileID: -5207815603632782757}
-  - component: {fileID: -7102529102487815621}
-  - component: {fileID: 8646766250236412909}
-  - component: {fileID: 5222472312985583052}
+  - component: {fileID: 1685650442576747409}
+  - component: {fileID: 1685650442576747408}
+  - component: {fileID: 1685650442576747415}
+  - component: {fileID: 1685650442576747414}
+  - component: {fileID: 5932770335019180153}
+  - component: {fileID: 7788961642216244909}
+  - component: {fileID: 2797437344999873007}
+  - component: {fileID: 866624431090082191}
+  - component: {fileID: 7392409383717034073}
+  - component: {fileID: 6418073514922419832}
   m_Layer: 7
-  m_Name: Beetle
+  m_Name: BeetleEasy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &435937775600926757
+--- !u!4 &1685650442576747409
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 435937775600926782}
+  m_GameObject: {fileID: 1685650442576747402}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.41, y: -0.39, z: 0}
+  m_LocalPosition: {x: -8.381418, y: -2.6863804, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4572237412855919294}
+  - {fileID: 3322452072852187402}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &435937775600926756
+--- !u!212 &1685650442576747408
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 435937775600926782}
+  m_GameObject: {fileID: 1685650442576747402}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -129,14 +176,14 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &435937775600926755
+--- !u!50 &1685650442576747415
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 435937775600926782}
+  m_GameObject: {fileID: 1685650442576747402}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -150,13 +197,13 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &435937775600926754
+--- !u!61 &1685650442576747414
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 435937775600926782}
+  m_GameObject: {fileID: 1685650442576747402}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -176,13 +223,13 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.6857652}
   m_EdgeRadius: 0
---- !u!82 &4845044247399857101
+--- !u!82 &5932770335019180153
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 435937775600926782}
+  m_GameObject: {fileID: 1685650442576747402}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -272,14 +319,14 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!95 &9043107543213874457
+--- !u!95 &7788961642216244909
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 435937775600926782}
+  m_GameObject: {fileID: 1685650442576747402}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: e2d0ad72b1f29b44389ccb0fef3a9d8e, type: 2}
@@ -292,13 +339,13 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &-5207815603632782757
+--- !u!114 &2797437344999873007
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 435937775600926782}
+  m_GameObject: {fileID: 1685650442576747402}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 22136754a9c353347b77139c77d864d5, type: 3}
@@ -307,53 +354,53 @@ MonoBehaviour:
   enemyData: {fileID: 11400000, guid: cf9ef94a4b30b3c48bfdfd9fbdef2ce6, type: 2}
   playerController: {fileID: 0}
   damage: 3
---- !u!114 &-7102529102487815621
+--- !u!114 &866624431090082191
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 435937775600926782}
+  m_GameObject: {fileID: 1685650442576747402}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7d53209dd27b1c243b4828863ee88dba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 50
   currentHealth: 0
---- !u!114 &8646766250236412909
+--- !u!114 &7392409383717034073
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 435937775600926782}
+  m_GameObject: {fileID: 1685650442576747402}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5e09842d662249f42b40c7d240c550a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: {fileID: 3033160421060757319}
---- !u!114 &5222472312985583052
+  currentState: {fileID: 4287306346786954483}
+--- !u!114 &6418073514922419832
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 435937775600926782}
+  m_GameObject: {fileID: 1685650442576747402}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e469bd74f38a0cd47993939096e8e32e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 435937775600926755}
-  speed: 3
+  rb: {fileID: 1685650442576747415}
+  speed: 2
   stoppingDistance: 0
   retreatDistance: 0
-  startTimeBetweenShots: 2
-  projectile: {fileID: 3080780383693983154, guid: 586db29410d33634e90af88833a85c4a, type: 3}
+  startTimeBetweenShots: 3
+  projectile: {fileID: 3080780383693983154, guid: 2a6eab106d13cca42873a6f2af070861, type: 3}
   player: {fileID: 0}
---- !u!1 &1066818498899969944
+--- !u!1 &2280643270627679276
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -361,8 +408,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4497984686333004707}
-  - component: {fileID: 6949834307659452932}
+  - component: {fileID: 3387951570394861591}
+  - component: {fileID: 8150007097380506032}
   m_Layer: 0
   m_Name: Scared
   m_TagString: Untagged
@@ -370,37 +417,37 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4497984686333004707
+--- !u!4 &3387951570394861591
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1066818498899969944}
+  m_GameObject: {fileID: 2280643270627679276}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4572237412855919294}
+  m_Father: {fileID: 3322452072852187402}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6949834307659452932
+--- !u!114 &8150007097380506032
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1066818498899969944}
+  m_GameObject: {fileID: 2280643270627679276}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ebf527af8683f0a46bde28c6c64e555d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyRangedMovement: {fileID: 5222472312985583052}
-  beetleExposed: {fileID: 5208904291416659785}
-  enemyHealth: {fileID: -7102529102487815621}
---- !u!1 &1198551939233864091
+  enemyRangedMovement: {fileID: 6418073514922419832}
+  beetleExposed: {fileID: 6422660729010097405}
+  enemyHealth: {fileID: 866624431090082191}
+--- !u!1 &4107496143596580501
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -408,55 +455,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5989110404590274317}
-  - component: {fileID: 454214226293192499}
-  m_Layer: 0
-  m_Name: Enraged
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5989110404590274317
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1198551939233864091}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4572237412855919294}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &454214226293192499
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1198551939233864091}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c709a325fe9f57f4dba59323ef493420, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyRangedMovement: {fileID: 5222472312985583052}
-  beetleScared: {fileID: 6949834307659452932}
-  enemyHealth: {fileID: -7102529102487815621}
---- !u!1 &2911753938015761697
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3557437026436961408}
-  - component: {fileID: 9107159493617865417}
+  - component: {fileID: 2321305569950076724}
+  - component: {fileID: 8001560028411660669}
   m_Layer: 0
   m_Name: BeetleFinal
   m_TagString: Untagged
@@ -464,34 +464,34 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3557437026436961408
+--- !u!4 &2321305569950076724
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2911753938015761697}
+  m_GameObject: {fileID: 4107496143596580501}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4572237412855919294}
+  m_Father: {fileID: 3322452072852187402}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9107159493617865417
+--- !u!114 &8001560028411660669
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2911753938015761697}
+  m_GameObject: {fileID: 4107496143596580501}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 123a4a30dd3ba6e429fd1e8b826fdd12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &8024375662631409913
+--- !u!1 &7294022065625788582
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -499,56 +499,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 278297946217388855}
-  - component: {fileID: 5208904291416659785}
-  m_Layer: 0
-  m_Name: BeetleExposed
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &278297946217388855
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8024375662631409913}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4572237412855919294}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5208904291416659785
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8024375662631409913}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d082621700578c44fb5d09f2978a80d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controller: {fileID: 0}
-  enemyRangedMovement: {fileID: 5222472312985583052}
-  scaredCooldown: 5
-  beetleFinal: {fileID: 9107159493617865417}
---- !u!1 &8381747911719267090
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7615275405747726802}
-  - component: {fileID: 3033160421060757319}
+  - component: {fileID: 8702790248788587110}
+  - component: {fileID: 4287306346786954483}
   m_Layer: 0
   m_Name: Normal
   m_TagString: Untagged
@@ -556,33 +508,81 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7615275405747726802
+--- !u!4 &8702790248788587110
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8381747911719267090}
+  m_GameObject: {fileID: 7294022065625788582}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4572237412855919294}
+  m_Father: {fileID: 3322452072852187402}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3033160421060757319
+--- !u!114 &4287306346786954483
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8381747911719267090}
+  m_GameObject: {fileID: 7294022065625788582}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: daa99836f5521354a9e489314cf31683, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyRangedMovement: {fileID: 5222472312985583052}
-  beetleEnraged: {fileID: 454214226293192499}
-  enemyHealth: {fileID: -7102529102487815621}
+  enemyRangedMovement: {fileID: 6418073514922419832}
+  beetleEnraged: {fileID: 1667968295362899079}
+  enemyHealth: {fileID: 866624431090082191}
+--- !u!1 &9093944241418470221
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1347939393454227587}
+  - component: {fileID: 6422660729010097405}
+  m_Layer: 0
+  m_Name: BeetleExposed
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1347939393454227587
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9093944241418470221}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3322452072852187402}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6422660729010097405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9093944241418470221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d082621700578c44fb5d09f2978a80d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 0}
+  enemyRangedMovement: {fileID: 6418073514922419832}
+  scaredCooldown: 5
+  beetleFinal: {fileID: 8001560028411660669}

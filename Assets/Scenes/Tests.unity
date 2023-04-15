@@ -359,7 +359,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4723134944513403587, guid: 3cd1b4543fee0e94f803704a286cdf9c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -9
+      value: -8
       objectReference: {fileID: 0}
     - target: {fileID: 4723134944513403587, guid: 3cd1b4543fee0e94f803704a286cdf9c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1061,7 +1061,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4723134944513403587, guid: 3cd1b4543fee0e94f803704a286cdf9c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -9
+      value: -8
       objectReference: {fileID: 0}
     - target: {fileID: 4723134944513403587, guid: 3cd1b4543fee0e94f803704a286cdf9c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1818,6 +1818,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad00c5bf0c0750346888e299da031e5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerController: {fileID: 0}
   pauseMenuUI: {fileID: 221234832}
 --- !u!1 &519420028
 GameObject:
@@ -2105,7 +2106,7 @@ MonoBehaviour:
   waves:
   - name: Mice
     enemy:
-    - {fileID: 3080780383693983152, guid: e18e15a9faeacec44b66fc6d77ddcf60, type: 3}
+    - {fileID: 5789032110996524514, guid: a37e15eee40d80f4a860a7599fd2c2ca, type: 3}
     count: 1
     rate: 1
   - name: Rat

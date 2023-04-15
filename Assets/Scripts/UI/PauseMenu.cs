@@ -7,23 +7,30 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public static bool isPaused = false;
-
+    public PlayerController playerController;
     public GameObject pauseMenuUI;
 
+    private void Start()
+    {
+        playerController = GameObject.Find("Player").GetComponent<PlayerController>();
+    }
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(playerController.currentHealth > 0)
         {
-            if(isPaused)
+            if(Input.GetKeyDown(KeyCode.Escape))
             {
-                Resume();
+                if(isPaused)
+                {
+                    Resume();
+                }
+                else
+                {
+                     Pause();
+                }
             }
-            else
-            {
-                Pause();
-            }
-        }
+        }   
     }
 
     public void Resume()

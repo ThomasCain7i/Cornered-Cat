@@ -24,7 +24,7 @@ public class PhaseState : State
         else
         {
             GameObject.FindGameObjectWithTag("Enemy").GetComponent<BoxCollider2D>().enabled = false;
-            GameObject.FindGameObjectWithTag("Enemy").GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.7f);
+            GameObject.FindGameObjectWithTag("Enemy").GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.5f);
             return this;
         }
     }
