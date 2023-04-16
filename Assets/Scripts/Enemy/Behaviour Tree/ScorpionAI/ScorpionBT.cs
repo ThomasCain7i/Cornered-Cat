@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using BehaviourTree;
 
-public class SlugBT : Tree
+public class ScorpionBT : Tree
 {
     public UnityEngine.Transform[] waypoints;
 

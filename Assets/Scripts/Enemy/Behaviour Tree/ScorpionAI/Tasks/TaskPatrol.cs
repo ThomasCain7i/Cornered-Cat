@@ -83,7 +83,7 @@ public class TaskPatrol : Node
             }
             else
             {
-                _transform.position = Vector2.MoveTowards(_transform.position, wp.position, SlugBT.speed * Time.deltaTime);
+                _transform.position = Vector2.MoveTowards(_transform.position, wp.position, ScorpionBT.speed * Time.deltaTime);
             }
         }
         state = NodeState.RUNNING;

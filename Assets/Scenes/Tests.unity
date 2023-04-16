@@ -2111,7 +2111,7 @@ MonoBehaviour:
     rate: 1
   - name: Rat
     enemy:
-    - {fileID: 5822097278806029720, guid: ad0d8b9337d18614a980fc1b3263f4a3, type: 3}
+    - {fileID: 1685650442576747409, guid: eed94c064f5da1b40b1befb1b80671b7, type: 3}
     count: 2
     rate: 2
   - name: Dog
