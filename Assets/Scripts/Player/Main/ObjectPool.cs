@@ -17,12 +17,12 @@ public class ObjectPool : MonoBehaviour
     void Start()
     {
         pooledObjects = new List<GameObject>();
-        GameObject tmp;
+        GameObject yarn;
         for (int i = 0; i < amountToPool; i++)
         {
-            tmp = Instantiate(objectToPool);
-            tmp.SetActive(false);
-            pooledObjects.Add(tmp);
+            yarn = Instantiate(objectToPool);
+            yarn.SetActive(false);
+            pooledObjects.Add(yarn);
         }
     }
 
