@@ -26,7 +26,6 @@ public class PlayerController3 : MonoBehaviour
 
     //Invincibility after damage
     float invincibeTimer;
-    bool invincible = false;
 
     //Change colour after damage
     Material mWhite;
@@ -58,7 +57,7 @@ public class PlayerController3 : MonoBehaviour
 
         if(invincibeTimer <= 0)
         {
-            invincible = false;
+
         }
 
         //Processing Inputs from player
@@ -102,7 +101,7 @@ public class PlayerController3 : MonoBehaviour
         invincibeTimer = 1;
         if(invincibeTimer > 0)
         {
-            invincible = true;
+
         }
     }
 

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -5377376599968365650}
   - component: {fileID: 7384199854803528937}
   - component: {fileID: 7384199854803528933}
+  - component: {fileID: 1638930878854666115}
   m_Layer: 0
   m_Name: Player OP
   m_TagString: Player
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 7384199854803528938}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7384199856419489122}
@@ -77,12 +78,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 754776191, guid: 1e5a993ebed4edd4c9e6df1334e3a552, type: 3}
+  m_Sprite: {fileID: -1781501668, guid: 08d40b48957fc924e99d3d28cee2d9e5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.32, y: 0.3}
+  m_Size: {x: 1, y: 0.9375}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -102,7 +103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 8
   rb: {fileID: 7384199854803528937}
-  weapon: {fileID: 0}
+  objectPool: {fileID: 1150756169127626449}
   sceneCamera: {fileID: 0}
   maxHealth: 5
   currentHealth: 0
@@ -146,8 +147,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 1.875}
-    newSize: {x: 0.32, y: 0.3}
+    oldSize: {x: 1, y: 0.9375}
+    newSize: {x: 1, y: 0.9375}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -155,6 +156,26 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.656987, y: 1.1826435}
   m_EdgeRadius: 0
+--- !u!95 &1638930878854666115
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7384199854803528938}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bc8129399a926a3449b7d3d2a52b7673, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &7384199855405213252
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,7 +305,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb74c3fbbb6537046b998c09239d3760, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 677652270466035179, guid: c20d1f5e4e0ee434cbb33787df65e350, type: 3}
-  numBullets: 5
   firePoint: {fileID: 7384199855405213251}
-  fireForce: 4
+  fireForce: 10
+  prefab: {fileID: 677652270466035179, guid: da59afe80fb548440a14786310e25e24, type: 3}

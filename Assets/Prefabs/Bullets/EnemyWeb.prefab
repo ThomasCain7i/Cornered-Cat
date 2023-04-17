@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4630827499088136316}
   - component: {fileID: 8525671390463384885}
   - component: {fileID: 5340099490137709143}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EnemyWeb
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -129,7 +129,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.026435137, y: 0.013391852}
+  m_Offset: {x: -0.0008303821, y: -0.00016361475}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -140,7 +140,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.0031438, y: 0.9795749}
+  m_Size: {x: 0.87361366, y: 0.7536502}
   m_EdgeRadius: 0
 --- !u!95 &5340099490137709143
 Animator:

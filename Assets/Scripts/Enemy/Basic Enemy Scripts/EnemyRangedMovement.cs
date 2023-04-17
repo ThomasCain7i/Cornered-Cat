@@ -22,7 +22,6 @@ public class EnemyRangedMovement : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
-
         timeBetweenShots = startTimeBetweenShots;
     }
 

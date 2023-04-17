@@ -25,8 +25,10 @@ public class PlayerController : MonoBehaviour
     public int currentHealth;
 
     //Invincibility after damage
-    float invincibeTimer;
-    bool invincible = false;
+    private bool isInvincible = false;
+
+    [SerializeField]
+    private float invincibilityDurationSeconds = 1.5f;
 
     //Change colour after damage
     Material mWhite;
@@ -37,8 +39,14 @@ public class PlayerController : MonoBehaviour
     public HealthBar healthBar;
     public static event Action OnPlayerDeath;
 
+    //Joystick controls
+    public bool useController;
+
     //Spider
     public float webCooldown;
+
+    //InfectedMouse
+    public float infectedCooldown;
 
     private void Start()
     {
@@ -54,16 +62,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        invincibeTimer -= Time.deltaTime;
-
-        if(invincibeTimer <= 0)
-        {
-            invincible = false;
-        }
 
         //Processing Inputs from player
         ProcessInputs();
 
+        //Spider web side effects
         if (webCooldown > 0)
         {
             moveSpeed = 4f;
@@ -73,17 +76,31 @@ public class PlayerController : MonoBehaviour
         {
             moveSpeed = 8f;
         }
+
+        //Infected mouse side effects
+        if(infectedCooldown > 0)
+        {
+            moveSpeed = 0f;
+            infectedCooldown -= Time.deltaTime;
+        }
+        else
+        {
+            moveSpeed = 8f;
+        }
     }
 
     public void TakeDamage(int amount)
     {
+        //If invincible do not deal damage
+        if (isInvincible) return;
+
         //Current health - amount = damage
         currentHealth -= amount;
 
+        //Play audio for damage taken
         FindObjectOfType<AudioManager>().Play("PlayerHurt");
 
         StartCoroutine("Flash");
-        InvinciblePeriod();
 
         //Set up for healthbar UI
         healthBar.SetHealth(currentHealth);
@@ -95,14 +112,25 @@ public class PlayerController : MonoBehaviour
             OnPlayerDeath?.Invoke();
             FindObjectOfType<AudioManager>().Play("PlayerDeath");
         }
+        StartCoroutine(BecomeTemporarilyInvincible());
     }
 
-    void InvinciblePeriod()
+    private IEnumerator BecomeTemporarilyInvincible()
     {
-        invincibeTimer = 1;
-        if(invincibeTimer > 0)
+        Debug.Log("Player turned invincible!");
+        isInvincible = true;
+
+        yield return new WaitForSeconds(invincibilityDurationSeconds);
+
+        isInvincible = false;
+        Debug.Log("Player is no longer invincible!");
+    }
+
+    void MethodThatTriggersInvulnerability()
+    {
+        if (!isInvincible)
         {
-            invincible = true;
+            StartCoroutine(BecomeTemporarilyInvincible());
         }
     }
 
@@ -129,27 +157,53 @@ public class PlayerController : MonoBehaviour
 
     void ProcessInputs()
     {
-        //Movement horizontal and vertical
-        float moveX = Input.GetAxisRaw("Horizontal");
-        float moveY = Input.GetAxisRaw("Vertical");
-
-        //If press mouse 1 fire
-        if(Input.GetMouseButtonDown(0))
+        if (!PauseMenu.isPaused)
         {
-            GameObject bullet = ObjectPool.SharedInstance.GetPooledObject();
-            if (bullet != null)
+            if (!useController)
             {
-                bullet.transform.position = FirePoint.transform.position;
-                bullet.transform.rotation = FirePoint.transform.rotation;
-                bullet.SetActive(true);
+                //Movement horizontal and vertical
+                float moveX = Input.GetAxisRaw("Horizontal");
+                float moveY = Input.GetAxisRaw("Vertical");
+
+                //If press mouse 1 fire
+                if (Input.GetMouseButtonDown(0))
+                {
+                    GameObject bullet = ObjectPool.SharedInstance.GetPooledObject();
+                    if(bullet != null)
+                    {
+                        bullet.transform.position = FirePoint.transform.position;
+                        bullet.transform.rotation = FirePoint.transform.rotation;
+                        bullet.SetActive(true);
+                    }
+                    FindObjectOfType<AudioManager>().Play("PlayerFire");
+                }
+
+                //Get postion of mouse relitive to camera location and dont move super fast when travelling diagonally
+                moveDirection = new Vector2(moveX, moveY).normalized;
+                mousePosition = sceneCamera.ScreenToWorldPoint(Input.mousePosition);
             }
 
-            FindObjectOfType<AudioManager>().Play("PlayerFire");
-        }
+            if (useController)
+            {
+                Vector2 lookDir = new Vector2(Input.GetAxisRaw("RHorizontal"), -Input.GetAxisRaw("RVertical"));
+                float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
+                if (lookDir.sqrMagnitude > 0.0f)
+                {
+                    transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+                }
 
-        //Get postion of mouse relitive to camera location and dont move super fast when travelling diagonally
-        moveDirection = new Vector2(moveX, moveY).normalized;
-        mousePosition = sceneCamera.ScreenToWorldPoint(Input.mousePosition);
+                if (Input.GetKeyDown(KeyCode.Joystick1Button10))
+                {
+                    if(bullet != null)
+                    {
+                        bullet.transform.position = FirePoint.transform.position;
+                        bullet.transform.rotation = FirePoint.transform.rotation;
+                        bullet.SetActive(true);
+                    }
+                    FindObjectOfType<AudioManager>().Play("PlayerFire");
+                }
+            }
+        }
     }
 
     void Move()
