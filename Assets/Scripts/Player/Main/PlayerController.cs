@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
     {
         inputActions = new PlayerInputActions();
         inputActions.PlayerControls.Move.performed += ctx => movementInput = ctx.ReadValue<Vector2>();
-        inputActions.PlayerControls.FireDirection.performed += ctx => lookPosition = ctx.ReadValue<Vector2>();
+        inputActions.PlayerControls.LookDirection.performed += ctx => lookPosition = ctx.ReadValue<Vector2>();
     }
     private void Start()
     {
@@ -171,11 +171,13 @@ public class PlayerController : MonoBehaviour
     {
         if (!PauseMenu.isPaused)
         {
+            Vector2 input = lookPosition;
+
             if (!useController)
             {
                 //Movement horizontal and vertical
-                float moveX = Input.GetAxisRaw("Horizontal");
-                float moveY = Input.GetAxisRaw("Vertical");
+                float moveX = movementInput.x;
+                float moveY = movementInput.y;
 
                 //If press mouse 1 fire
                 if (Input.GetMouseButtonDown(0))
@@ -197,12 +199,6 @@ public class PlayerController : MonoBehaviour
 
             if (useController)
             {
-                Vector2 lookDir = new Vector2(Input.GetAxisRaw("RHorizontal"), -Input.GetAxisRaw("RVertical"));
-                float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
-                if (lookDir.sqrMagnitude > 0.0f)
-                {
-                    transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-                }
 
                 if (Input.GetKeyDown(KeyCode.Joystick1Button2))
                 {
@@ -217,6 +213,16 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void OnEnable()
+    {
+        inputActions.Enable();
+    }
+
+    private void OnDisable()
+    {
+        inputActions.Disable();
     }
 
     void Move()

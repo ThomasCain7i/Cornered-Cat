@@ -1,4 +1,4 @@
-using UnityEngine;
+/*using UnityEngine;
 
 public class DetectControlMethod : MonoBehaviour
 {
@@ -22,3 +22,4 @@ public class DetectControlMethod : MonoBehaviour
         }
     }
 }
+*/
