@@ -11,6 +11,12 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed;
     public Rigidbody2D rb;
 
+    //Controller Input System
+    PlayerInputActions inputActions;
+
+    Vector2 movementInput;
+    Vector2 lookPosition;
+
     //Reference to weapon
     public ObjectPool weapon;
 
@@ -48,6 +54,12 @@ public class PlayerController : MonoBehaviour
     //InfectedMouse
     public float infectedCooldown;
 
+    private void Awake()
+    {
+        inputActions = new PlayerInputActions();
+        inputActions.PlayerControls.Move.performed += ctx => movementInput = ctx.ReadValue<Vector2>();
+        inputActions.PlayerControls.FireDirection.performed += ctx => lookPosition = ctx.ReadValue<Vector2>();
+    }
     private void Start()
     {
         //Current health = MaxHealth
@@ -192,9 +204,10 @@ public class PlayerController : MonoBehaviour
                     transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
                 }
 
-                if (Input.GetKeyDown(KeyCode.Joystick1Button10))
+                if (Input.GetKeyDown(KeyCode.Joystick1Button2))
                 {
-                    if(bullet != null)
+                    GameObject bullet = ObjectPool.SharedInstance.GetPooledObject();
+                    if (bullet != null)
                     {
                         bullet.transform.position = FirePoint.transform.position;
                         bullet.transform.rotation = FirePoint.transform.rotation;

@@ -9,7 +9,7 @@ public class Bullet : MonoBehaviour
     public int damage;
 
     public GameObject bullet;
-    public float thrust = 1f;
+    public float thrust = .5f;
 
     void Start()
     {
