@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class Bullet3 : MonoBehaviour
 {
     public Rigidbody2D rb;
     public int damage;

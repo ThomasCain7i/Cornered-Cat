@@ -11,9 +11,8 @@ GameObject:
   - component: {fileID: 455442021507134580}
   - component: {fileID: 3957586093976267414}
   - component: {fileID: 5236267694211342753}
-  - component: {fileID: 950510961673390134}
   - component: {fileID: 1629449324861631678}
-  - component: {fileID: 1905592300561150371}
+  - component: {fileID: 1199751954843289364}
   m_Layer: 0
   m_Name: PlayerYarn
   m_TagString: Untagged
@@ -109,20 +108,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &950510961673390134
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 677652270466035179}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d068a89a631b7c14da358f36520f8ccd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 5236267694211342753}
-  damage: 1
 --- !u!61 &1629449324861631678
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -149,23 +134,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.9249501, y: 0.93395615}
   m_EdgeRadius: 0
---- !u!95 &1905592300561150371
-Animator:
-  serializedVersion: 5
+--- !u!114 &1199751954843289364
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 677652270466035179}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: bb7a190938b946e4dba08e5c2d49ab27, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28882c9a5371dd646b16fdbe4fa96bf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 5236267694211342753}
+  damage: 1
+  bullet: {fileID: 0}
+  thrust: 10

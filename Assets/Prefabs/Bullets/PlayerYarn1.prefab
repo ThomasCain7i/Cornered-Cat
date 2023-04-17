@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 455442021507134580}
   - component: {fileID: 3957586093976267414}
   - component: {fileID: 5236267694211342753}
+  - component: {fileID: 950510961673390134}
   - component: {fileID: 1629449324861631678}
   - component: {fileID: 1905592300561150371}
-  - component: {fileID: 1056246763584489701}
   m_Layer: 0
-  m_Name: OP test
+  m_Name: PlayerYarn1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -109,6 +109,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &950510961673390134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 677652270466035179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d068a89a631b7c14da358f36520f8ccd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 5236267694211342753}
+  damage: 1
 --- !u!61 &1629449324861631678
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -155,17 +169,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &1056246763584489701
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 677652270466035179}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3bf1774a8042f1459d88d2290eedc35, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 5236267694211342753}
-  damage: 1

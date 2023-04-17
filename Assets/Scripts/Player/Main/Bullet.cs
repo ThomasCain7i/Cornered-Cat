@@ -3,10 +3,25 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class BulletOP : MonoBehaviour
+public class Bullet : MonoBehaviour
 {
     public Rigidbody2D rb;
     public int damage;
+
+    public GameObject bullet;
+    public float thrust = 3f;
+
+    void Start()
+    {
+        //Fetch the Rigidbody from the GameObject with this script attached
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+    //Apply a force to this Rigidbody in direction of this GameObjects up axis
+    void Update()
+    {
+        rb.AddForce(transform.up * thrust);
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {

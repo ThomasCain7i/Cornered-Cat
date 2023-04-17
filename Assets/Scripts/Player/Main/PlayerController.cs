@@ -1,18 +1,18 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Threading;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
+    public GameObject player;
+    public GameObject FirePoint;
+
     //Movement
     public float moveSpeed;
     public Rigidbody2D rb;
 
     //Reference to weapon
-    public Weapon weapon;
+    public ObjectPool weapon;
 
     //Where is the mouse
     private Vector2 moveDirection;
@@ -136,7 +136,14 @@ public class PlayerController : MonoBehaviour
         //If press mouse 1 fire
         if(Input.GetMouseButtonDown(0))
         {
-            weapon.Fire();
+            GameObject bullet = ObjectPool.SharedInstance.GetPooledObject();
+            if (bullet != null)
+            {
+                bullet.transform.position = FirePoint.transform.position;
+                bullet.transform.rotation = FirePoint.transform.rotation;
+                bullet.SetActive(true);
+            }
+
             FindObjectOfType<AudioManager>().Play("PlayerFire");
         }
 

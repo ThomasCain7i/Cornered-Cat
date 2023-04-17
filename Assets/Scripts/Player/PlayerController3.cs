@@ -5,20 +5,19 @@ using System.Threading;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class PlayerControllerOP : MonoBehaviour
+public class PlayerController3 : MonoBehaviour
 {
     //Movement
     public float moveSpeed;
     public Rigidbody2D rb;
 
     //Reference to weapon
-    public ObjectPool objectPool;
+    public Weapon weapon;
 
     //Where is the mouse
     private Vector2 moveDirection;
     private Vector2 mousePosition;
 
-    //Reference to the camera
     public Camera sceneCamera;
 
     //Health
@@ -57,10 +56,11 @@ public class PlayerControllerOP : MonoBehaviour
     {
         invincibeTimer -= Time.deltaTime;
 
-        if (invincibeTimer <= 0)
+        if(invincibeTimer <= 0)
         {
             invincible = false;
         }
+
         //Processing Inputs from player
         ProcessInputs();
 
@@ -72,24 +72,6 @@ public class PlayerControllerOP : MonoBehaviour
         else
         {
             moveSpeed = 8f;
-        }
-
-        // If the fire key is pressed, fire a bullet
-        if (Input.GetMouseButtonDown(0))
-        {
-            Fire();
-        }
-    }
-
-    private void Fire()
-    {
-        GameObject bullet = ObjectPool.instance.GetPooledObject();
-
-        if(bullet != null)
-        {
-            //bullet.transform.position = bulletPosition.position;
-            FindObjectOfType<AudioManager>().Play("PlayerFire");
-            bullet.SetActive(true);
         }
     }
 
@@ -106,7 +88,7 @@ public class PlayerControllerOP : MonoBehaviour
         //Set up for healthbar UI
         healthBar.SetHealth(currentHealth);
 
-        if (currentHealth <= 0)
+        if(currentHealth <= 0)
         {
             currentHealth = 0;
             Time.timeScale = 0;
@@ -118,7 +100,7 @@ public class PlayerControllerOP : MonoBehaviour
     void InvinciblePeriod()
     {
         invincibeTimer = 1;
-        if (invincibeTimer > 0)
+        if(invincibeTimer > 0)
         {
             invincible = true;
         }
@@ -152,9 +134,9 @@ public class PlayerControllerOP : MonoBehaviour
         float moveY = Input.GetAxisRaw("Vertical");
 
         //If press mouse 1 fire
-        if (Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0))
         {
-//            BulletOP.Fire();
+            weapon.Fire();
             FindObjectOfType<AudioManager>().Play("PlayerFire");
         }
 
