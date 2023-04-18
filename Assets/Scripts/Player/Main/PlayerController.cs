@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlayerController : MonoBehaviour
 {
@@ -45,6 +46,8 @@ public class PlayerController : MonoBehaviour
     //InfectedMouse
     public float infectedCooldown;
 
+    public GameObject deathFirstButton;
+
     private void Start()
     {
         //Current health = MaxHealth
@@ -56,6 +59,7 @@ public class PlayerController : MonoBehaviour
         mDefault = sRend.material;
         mWhite = Resources.Load("mWhite", typeof(Material)) as Material;
     }
+
     // Update is called once per frame
     void Update()
     {
@@ -104,6 +108,8 @@ public class PlayerController : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            EventSystem.current.SetSelectedGameObject(null);
+            EventSystem.current.SetSelectedGameObject(deathFirstButton);
             currentHealth = 0;
             Time.timeScale = 0;
             OnPlayerDeath?.Invoke();
