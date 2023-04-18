@@ -354,8 +354,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 174365273}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -9.9, z: 0}
-  m_LocalScale: {x: 0.25, y: 43, z: 1}
+  m_LocalPosition: {x: 0, y: -11.5, z: 0}
+  m_LocalScale: {x: 3, y: 43, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 582032979}
@@ -465,8 +465,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 204078044}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 21.25, y: 0, z: 0}
-  m_LocalScale: {x: 0.25, y: 20, z: 1}
+  m_LocalPosition: {x: 23, y: 0, z: 0}
+  m_LocalScale: {x: 4, y: 20, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 582032979}
@@ -1459,8 +1459,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 793394090}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 9.9, z: 0}
-  m_LocalScale: {x: 0.25, y: 43, z: 1}
+  m_LocalPosition: {x: 0, y: 12, z: 0}
+  m_LocalScale: {x: 4, y: 43, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 582032979}
@@ -1651,7 +1651,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 697729578}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &945691466
@@ -2040,8 +2040,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1232947042}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -21.25, y: 0, z: 0}
-  m_LocalScale: {x: 0.25, y: 20, z: 1}
+  m_LocalPosition: {x: -23, y: 0, z: 0}
+  m_LocalScale: {x: 4, y: 20, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 582032979}
@@ -3058,6 +3058,10 @@ PrefabInstance:
       propertyPath: sceneCamera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 4631960359000110428, guid: 74af36aee1ca4514faf50d35c90eb2dd, type: 3}
+      propertyPath: useController
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7384199854803528934, guid: 74af36aee1ca4514faf50d35c90eb2dd, type: 3}
       propertyPath: m_RootOrder
       value: 1

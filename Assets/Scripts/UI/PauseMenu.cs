@@ -14,9 +14,11 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //So that the player cant pause after death
         if(playerController.currentHealth > 0)
         {
-            if(Input.GetKeyDown(KeyCode.Escape))
+            //If start button or escape pressed
+            if(Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Joystick1Button7))
             {
                 if(isPaused)
                 {
@@ -32,6 +34,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
+        //Take away UI and set time back to normal
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
@@ -39,6 +42,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Pause()
     {
+        //Add UI and set time to stopped
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
@@ -46,12 +50,14 @@ public class PauseMenu : MonoBehaviour
 
     public void LoadMenu()
     {
+        //When you return to menu reset paused time
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
     }
 
     public void Quit()
     {
+        //Quit
         Application.Quit();
     }
 }

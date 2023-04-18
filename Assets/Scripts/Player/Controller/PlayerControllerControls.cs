@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerControllerControls : MonoBehaviour
 {
     //Where to instantiate the bullets
     public GameObject FirePoint;
@@ -38,6 +38,9 @@ public class PlayerController : MonoBehaviour
     //HealthBar & DeathMenu
     public HealthBar healthBar;
     public static event Action OnPlayerDeath;
+
+    //Joystick controls
+    public bool useController;
 
     //Spider
     public float webCooldown;
@@ -154,17 +157,16 @@ public class PlayerController : MonoBehaviour
 
     void ProcessInputs()
     {
-        //If the game sint paused
         if (!PauseMenu.isPaused)
         {
-                //Movement horizontal and vertical
-                float moveX = Input.GetAxisRaw("Horizontal");
-                float moveY = Input.GetAxisRaw("Vertical");
-
+            //Movement horizontal and vertical
+            float moveX = Input.GetAxisRaw("Horizontal");
+            float moveY = Input.GetAxisRaw("Vertical");
+            if (!useController)
+            {
                 //If press mouse 1 fire
-                if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Joystick1Button5))
+                if (Input.GetMouseButtonDown(0))
                 {
-                    //Object pool creation
                     GameObject bullet = ObjectPool.SharedInstance.GetPooledObject();
                     if (bullet != null)
                     {
@@ -173,23 +175,34 @@ public class PlayerController : MonoBehaviour
                         bullet.SetActive(true);
                     }
                     FindObjectOfType<AudioManager>().Play("PlayerFire");
-                    //Make mouse invis if controller used
-                    if(Input.GetKeyDown(KeyCode.Joystick1Button5))
-                    {
-                        Cursor.visible = false;
-                    }
                 }
 
                 //Get postion of mouse relitive to camera location and dont move super fast when travelling diagonally
                 moveDirection = new Vector2(moveX, moveY).normalized;
                 mousePosition = sceneCamera.ScreenToWorldPoint(Input.mousePosition);
+            }
 
+            if (useController)
+            {
                 Vector2 lookDir = new Vector2(Input.GetAxisRaw("RHorizontal"), -Input.GetAxisRaw("RVertical"));
                 float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
                 if (lookDir.sqrMagnitude > 0.0f)
                 {
                     transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
                 }
+
+                if (Input.GetKeyDown(KeyCode.Joystick1Button10))
+                {
+                    GameObject bullet = ObjectPool.SharedInstance.GetPooledObject();
+                    if (bullet != null)
+                    {
+                        bullet.transform.position = FirePoint.transform.position;
+                        bullet.transform.rotation = FirePoint.transform.rotation;
+                        bullet.SetActive(true);
+                    }
+                    FindObjectOfType<AudioManager>().Play("PlayerFire");
+                }
+            }
         }
     }
 
