@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Summon : MonoBehaviour
 {
+    public PlayerController controller;
+    public EnemyHealth enemyHealth;
     public GameObject prefab;
 
     public float timeBetweenSummon = 5;
@@ -12,6 +14,12 @@ public class Summon : MonoBehaviour
     public Transform spawnPoint2;
     public Transform spawnPoint3;
     public Transform spawnPoint4;
+
+    private void Start()
+    {
+        controller = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        enemyHealth = GetComponent<EnemyHealth>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -25,6 +33,11 @@ public class Summon : MonoBehaviour
             Instantiate(prefab, spawnPoint3);
             Instantiate(prefab, spawnPoint4);
             timeBetweenSummon = 5;
+        }
+
+        if(enemyHealth.currentHealth == 1)
+        {
+            controller.currentHealth = controller.maxHealth;
         }
     }
 }

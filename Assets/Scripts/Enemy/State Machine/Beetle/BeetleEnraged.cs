@@ -16,7 +16,7 @@ public class BeetleEnraged : State
         }
         else
         {
-            this.enemyRangedMovement.speed = 5;
+            this.enemyRangedMovement.speed = 4;
             this.enemyRangedMovement.startTimeBetweenShots = 1;
             return this;
         }

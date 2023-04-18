@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 moveDirection;
     private Vector2 mousePosition;
 
+    //Camera reference
     public Camera sceneCamera;
 
     //Health
@@ -46,7 +47,11 @@ public class PlayerController : MonoBehaviour
     //InfectedMouse
     public float infectedCooldown;
 
+    //Reference to retry button on death
     public GameObject deathFirstButton;
+
+    //Controller aim 
+    public GameObject controllerAim;
 
     private void Start()
     {
@@ -183,7 +188,13 @@ public class PlayerController : MonoBehaviour
                     if(Input.GetKeyDown(KeyCode.Joystick1Button5))
                     {
                         Cursor.visible = false;
+                        controllerAim.SetActive(true);
                     }
+                    if(Input.GetMouseButtonDown(0))
+                    {
+                    Cursor.visible = true;
+                    controllerAim.SetActive(false);
+                }
                 }
 
                 //Get postion of mouse relitive to camera location and dont move super fast when travelling diagonally

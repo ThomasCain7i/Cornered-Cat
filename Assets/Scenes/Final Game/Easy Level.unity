@@ -1820,6 +1820,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerController: {fileID: 0}
   pauseMenuUI: {fileID: 221234832}
+  pauseFirstButton: {fileID: 1542039222}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -6090,6 +6091,10 @@ PrefabInstance:
       propertyPath: sceneCamera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 4631960359000110428, guid: 74af36aee1ca4514faf50d35c90eb2dd, type: 3}
+      propertyPath: deathFirstButton
+      value: 
+      objectReference: {fileID: 697729578}
     - target: {fileID: 7384199854803528934, guid: 74af36aee1ca4514faf50d35c90eb2dd, type: 3}
       propertyPath: m_RootOrder
       value: 1
