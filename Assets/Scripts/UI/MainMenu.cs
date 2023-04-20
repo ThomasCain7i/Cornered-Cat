@@ -4,8 +4,8 @@ using UnityEngine.EventSystems;
 
 public class MainMenu : MonoBehaviour
 {
-    public GameObject mainMenu, controlsMenu, difficultyMenu;
-    public GameObject menuFirstButton, controlsFirstButton, controlsCloseButton, playFirstButton, playCloseButton;
+    public GameObject mainMenu, controlsMenu, difficultyMenu, kbmMenu, controllerMenu;
+    public GameObject menuFirstButton, controlsFirstButton, controlsCloseButton, playFirstButton, playCloseButton, controllerFirstButton, kbmFirstButton;
 
     public void Start()
     {
@@ -60,6 +60,38 @@ public class MainMenu : MonoBehaviour
         difficultyMenu.SetActive(false);
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(menuFirstButton);
+    }
+
+    public void OpenController()
+    {
+        kbmMenu.SetActive(false);
+        controllerMenu.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(controllerFirstButton);
+    }
+
+    public void CloseController()
+    {
+        controllerMenu.SetActive(false);
+        kbmMenu.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(kbmFirstButton);
+    }
+
+    public void OpenKBM()
+    {
+        controllerMenu.SetActive(false);
+        kbmMenu.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(kbmFirstButton);
+    }
+
+    public void CloseKBM()
+    {
+        controllerMenu.SetActive(true);
+        kbmMenu.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(controllerFirstButton);
     }
 
     public void QuitGame()
