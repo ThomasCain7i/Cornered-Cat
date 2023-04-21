@@ -6,7 +6,7 @@ public class ScorpionBT : Tree
 {
     public UnityEngine.Transform[] waypoints;
 
-    public static float speed = 35f;
+    public static float speed = 15f;
 
     protected override Node SetupTree()
     {

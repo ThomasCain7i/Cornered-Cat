@@ -351,7 +351,7 @@ MonoBehaviour:
   stoppingDistance: 0
   retreatDistance: 0
   startTimeBetweenShots: 2
-  projectile: {fileID: 3080780383693983154, guid: 586db29410d33634e90af88833a85c4a, type: 3}
+  projectile: {fileID: 3080780383693983154, guid: 2a6eab106d13cca42873a6f2af070861, type: 3}
   player: {fileID: 0}
 --- !u!1 &1066818498899969944
 GameObject:
@@ -491,6 +491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 123a4a30dd3ba6e429fd1e8b826fdd12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controller: {fileID: 0}
 --- !u!1 &8024375662631409913
 GameObject:
   m_ObjectHideFlags: 0

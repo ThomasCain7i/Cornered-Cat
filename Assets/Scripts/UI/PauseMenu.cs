@@ -9,6 +9,8 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenuUI;
     public GameObject pauseFirstButton;
 
+    public WaveSpawner waveSpawner;
+
     private void Start()
     {
         playerController = GameObject.Find("Player").GetComponent<PlayerController>();
@@ -17,7 +19,7 @@ public class PauseMenu : MonoBehaviour
     void Update()
     {
         //So that the player cant pause after death
-        if(playerController.currentHealth > 0)
+        if(playerController.currentHealth > 0 && waveSpawner.wavesComplete != 21)
         {
             //If start button or escape pressed
             if(Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Joystick1Button7))
@@ -57,6 +59,7 @@ public class PauseMenu : MonoBehaviour
         //When you return to menu reset paused time
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
+        Resume();
     }
 
     public void Quit()

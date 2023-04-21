@@ -1181,7 +1181,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -200}
-  m_SizeDelta: {x: 900, y: 150}
+  m_SizeDelta: {x: 1000, y: 150}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!95 &339659552
 Animator:
@@ -1223,7 +1223,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You completed the game on EASY
+  m_text: You completed the game on NORMAL
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 055c45df9252bd84db5b22066a2a505d, type: 2}
   m_sharedMaterial: {fileID: -3589712673423480009, guid: 055c45df9252bd84db5b22066a2a505d, type: 2}
@@ -1250,7 +1250,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 58.45
+  m_fontSize: 59.35
   m_fontSizeBase: 72
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2156,7 +2156,7 @@ MonoBehaviour:
   playerController: {fileID: 0}
   pauseMenuUI: {fileID: 221234832}
   pauseFirstButton: {fileID: 1542039222}
-  waveSpawner: {fileID: 597418564}
+  waveSpawner: {fileID: 515045036}
 --- !u!114 &511022788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2172,6 +2172,199 @@ MonoBehaviour:
   TimeCounter: 0
   startMinutes: 0
   currentTimeText: {fileID: 2141286702}
+--- !u!1 &515045035
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 515045037}
+  - component: {fileID: 515045036}
+  m_Layer: 0
+  m_Name: WaveManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &515045036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515045035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71436ed99513c8341b74ba6416edb4a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waves:
+  - name: Mice
+    enemy:
+    - {fileID: 3080780383693983152, guid: e18e15a9faeacec44b66fc6d77ddcf60, type: 3}
+    count: 2
+    rate: 1
+  - name: Rat
+    enemy:
+    - {fileID: 5822097278806029720, guid: ad0d8b9337d18614a980fc1b3263f4a3, type: 3}
+    count: 3
+    rate: 2
+  - name: Dog
+    enemy:
+    - {fileID: 52760017376938620, guid: f89efe243b4fc8f49873b1490598eaa1, type: 3}
+    count: 3
+    rate: 2
+  - name: DDMR
+    enemy:
+    - {fileID: 52760017376938620, guid: f89efe243b4fc8f49873b1490598eaa1, type: 3}
+    - {fileID: 52760017376938620, guid: f89efe243b4fc8f49873b1490598eaa1, type: 3}
+    - {fileID: 3080780383693983152, guid: e18e15a9faeacec44b66fc6d77ddcf60, type: 3}
+    - {fileID: 5822097278806029720, guid: ad0d8b9337d18614a980fc1b3263f4a3, type: 3}
+    count: 5
+    rate: 1.25
+  - name: Lava Ant
+    enemy:
+    - {fileID: 112332232316423906, guid: 485ac2cc7249a204f9e096491b20fecc, type: 3}
+    count: 1
+    rate: 1
+  - name: Ant
+    enemy:
+    - {fileID: 5940178841227836429, guid: e6f691d90ebd2d94a85fb19b2ce6f200, type: 3}
+    count: 6
+    rate: 2.5
+  - name: AMR
+    enemy:
+    - {fileID: 5940178841227836429, guid: e6f691d90ebd2d94a85fb19b2ce6f200, type: 3}
+    - {fileID: 3080780383693983152, guid: e18e15a9faeacec44b66fc6d77ddcf60, type: 3}
+    - {fileID: 5822097278806029720, guid: ad0d8b9337d18614a980fc1b3263f4a3, type: 3}
+    count: 6
+    rate: 2.5
+  - name: CDM
+    enemy:
+    - {fileID: 8256667676729123529, guid: b31837c88a0771b4f863532fd75ce956, type: 3}
+    - {fileID: 52760017376938620, guid: f89efe243b4fc8f49873b1490598eaa1, type: 3}
+    - {fileID: 3080780383693983152, guid: e18e15a9faeacec44b66fc6d77ddcf60, type: 3}
+    count: 5
+    rate: 2.5
+  - name: CDMAR
+    enemy:
+    - {fileID: 8256667676729123529, guid: b31837c88a0771b4f863532fd75ce956, type: 3}
+    - {fileID: 52760017376938620, guid: f89efe243b4fc8f49873b1490598eaa1, type: 3}
+    - {fileID: 3080780383693983152, guid: e18e15a9faeacec44b66fc6d77ddcf60, type: 3}
+    - {fileID: 5940178841227836429, guid: e6f691d90ebd2d94a85fb19b2ce6f200, type: 3}
+    - {fileID: 5822097278806029720, guid: ad0d8b9337d18614a980fc1b3263f4a3, type: 3}
+    count: 6
+    rate: 3
+  - name: Beetle
+    enemy:
+    - {fileID: 2519538922640028857, guid: 486f6917455dd1f4aa027a8aaa3a94f9, type: 3}
+    count: 1
+    rate: 1
+  - name: Spider
+    enemy:
+    - {fileID: 987774355585922132, guid: e8514550da22b4e47a9b33f996d17313, type: 3}
+    count: 5
+    rate: 1.2
+  - name: SC
+    enemy:
+    - {fileID: 987774355585922132, guid: e8514550da22b4e47a9b33f996d17313, type: 3}
+    - {fileID: 8256667676729123529, guid: b31837c88a0771b4f863532fd75ce956, type: 3}
+    count: 6
+    rate: 1.2
+  - name: Bedbug
+    enemy:
+    - {fileID: 6203611079636139624, guid: 988584b7f8f8ecb469da19d67432d861, type: 3}
+    count: 2
+    rate: 1
+  - name: Bedbugs
+    enemy:
+    - {fileID: 6203611079636139624, guid: 988584b7f8f8ecb469da19d67432d861, type: 3}
+    count: 4
+    rate: 1.25
+  - name: ALL
+    enemy:
+    - {fileID: 5940178841227836429, guid: e6f691d90ebd2d94a85fb19b2ce6f200, type: 3}
+    - {fileID: 6203611079636139624, guid: 988584b7f8f8ecb469da19d67432d861, type: 3}
+    - {fileID: 8256667676729123529, guid: b31837c88a0771b4f863532fd75ce956, type: 3}
+    - {fileID: 3080780383693983152, guid: e18e15a9faeacec44b66fc6d77ddcf60, type: 3}
+    - {fileID: 5822097278806029720, guid: ad0d8b9337d18614a980fc1b3263f4a3, type: 3}
+    - {fileID: 52760017376938620, guid: f89efe243b4fc8f49873b1490598eaa1, type: 3}
+    - {fileID: 987774355585922132, guid: e8514550da22b4e47a9b33f996d17313, type: 3}
+    count: 11
+    rate: 1
+  - name: FROG TOAD
+    enemy:
+    - {fileID: 6175726780591606798, guid: 19699fc0694cde543b48694cae343f50, type: 3}
+    - {fileID: 3000955228926807053, guid: 15c9481f45b159a45bc5b7bbe9f62ecf, type: 3}
+    count: 2
+    rate: 2
+  - name: Monkey
+    enemy:
+    - {fileID: 8241611548767367327, guid: c58f246fb065a524cb7c0ce477c18459, type: 3}
+    count: 7
+    rate: 7.1
+  - name: MonC
+    enemy:
+    - {fileID: 8241611548767367327, guid: c58f246fb065a524cb7c0ce477c18459, type: 3}
+    - {fileID: 8256667676729123529, guid: b31837c88a0771b4f863532fd75ce956, type: 3}
+    count: 8
+    rate: 5
+  - name: Infected Mouse
+    enemy:
+    - {fileID: 8524963431825857709, guid: 650f734ce252fac498097bf3a7f3e6bd, type: 3}
+    count: 6
+    rate: 6
+  - name: ALL AGAIN
+    enemy:
+    - {fileID: 8524963431825857709, guid: 650f734ce252fac498097bf3a7f3e6bd, type: 3}
+    - {fileID: 5822097278806029720, guid: ad0d8b9337d18614a980fc1b3263f4a3, type: 3}
+    - {fileID: 3080780383693983152, guid: e18e15a9faeacec44b66fc6d77ddcf60, type: 3}
+    - {fileID: 8256667676729123529, guid: b31837c88a0771b4f863532fd75ce956, type: 3}
+    - {fileID: 6203611079636139624, guid: 988584b7f8f8ecb469da19d67432d861, type: 3}
+    - {fileID: 5940178841227836429, guid: e6f691d90ebd2d94a85fb19b2ce6f200, type: 3}
+    - {fileID: 987774355585922132, guid: e8514550da22b4e47a9b33f996d17313, type: 3}
+    - {fileID: 8241611548767367327, guid: c58f246fb065a524cb7c0ce477c18459, type: 3}
+    - {fileID: 52760017376938620, guid: f89efe243b4fc8f49873b1490598eaa1, type: 3}
+    count: 24
+    rate: 0.6
+  - name: Scorpion
+    enemy:
+    - {fileID: 5789032110996524514, guid: a37e15eee40d80f4a860a7599fd2c2ca, type: 3}
+    count: 50
+    rate: 0.75
+  spawnPoints:
+  - {fileID: 1334238299}
+  - {fileID: 89171298}
+  - {fileID: 568132433}
+  - {fileID: 1668918905}
+  - {fileID: 1121745112}
+  - {fileID: 1378344767}
+  - {fileID: 1566734213}
+  - {fileID: 1302838635}
+  timeBetweenWaves: 2
+  _waveNumberText: {fileID: 0}
+  wavesComplete: 0
+  winMenu: {fileID: 37169267}
+  winFirstButton: {fileID: 2012791580}
+  timeScript: {fileID: 0}
+--- !u!4 &515045037
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515045035}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -2411,199 +2604,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3cd1b4543fee0e94f803704a286cdf9c, type: 3}
---- !u!1 &597418562
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 597418563}
-  - component: {fileID: 597418564}
-  m_Layer: 0
-  m_Name: WaveManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &597418563
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 597418562}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &597418564
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 597418562}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71436ed99513c8341b74ba6416edb4a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waves:
-  - name: Mice
-    enemy:
-    - {fileID: 3080780383693983152, guid: e18e15a9faeacec44b66fc6d77ddcf60, type: 3}
-    count: 1
-    rate: 1
-  - name: Rat
-    enemy:
-    - {fileID: 5822097278806029720, guid: ad0d8b9337d18614a980fc1b3263f4a3, type: 3}
-    count: 2
-    rate: 2
-  - name: Dog
-    enemy:
-    - {fileID: 52760017376938620, guid: f89efe243b4fc8f49873b1490598eaa1, type: 3}
-    count: 2
-    rate: 2
-  - name: DDMR
-    enemy:
-    - {fileID: 52760017376938620, guid: f89efe243b4fc8f49873b1490598eaa1, type: 3}
-    - {fileID: 52760017376938620, guid: f89efe243b4fc8f49873b1490598eaa1, type: 3}
-    - {fileID: 3080780383693983152, guid: e18e15a9faeacec44b66fc6d77ddcf60, type: 3}
-    - {fileID: 5822097278806029720, guid: ad0d8b9337d18614a980fc1b3263f4a3, type: 3}
-    count: 3
-    rate: 1.25
-  - name: Lava Ant
-    enemy:
-    - {fileID: 9052183290899264941, guid: 7f6af1bdad67efa41999e5de29f7902b, type: 3}
-    count: 1
-    rate: 1
-  - name: Ant
-    enemy:
-    - {fileID: 5940178841227836429, guid: e6f691d90ebd2d94a85fb19b2ce6f200, type: 3}
-    count: 4
-    rate: 2.5
-  - name: AMR
-    enemy:
-    - {fileID: 5940178841227836429, guid: e6f691d90ebd2d94a85fb19b2ce6f200, type: 3}
-    - {fileID: 3080780383693983152, guid: e18e15a9faeacec44b66fc6d77ddcf60, type: 3}
-    - {fileID: 5822097278806029720, guid: ad0d8b9337d18614a980fc1b3263f4a3, type: 3}
-    count: 5
-    rate: 2.5
-  - name: CDM
-    enemy:
-    - {fileID: 8256667676729123529, guid: b31837c88a0771b4f863532fd75ce956, type: 3}
-    - {fileID: 52760017376938620, guid: f89efe243b4fc8f49873b1490598eaa1, type: 3}
-    - {fileID: 3080780383693983152, guid: e18e15a9faeacec44b66fc6d77ddcf60, type: 3}
-    count: 4
-    rate: 2
-  - name: CDMAR
-    enemy:
-    - {fileID: 8256667676729123529, guid: b31837c88a0771b4f863532fd75ce956, type: 3}
-    - {fileID: 52760017376938620, guid: f89efe243b4fc8f49873b1490598eaa1, type: 3}
-    - {fileID: 3080780383693983152, guid: e18e15a9faeacec44b66fc6d77ddcf60, type: 3}
-    - {fileID: 5940178841227836429, guid: e6f691d90ebd2d94a85fb19b2ce6f200, type: 3}
-    - {fileID: 5822097278806029720, guid: ad0d8b9337d18614a980fc1b3263f4a3, type: 3}
-    count: 5
-    rate: 2.5
-  - name: Beetle
-    enemy:
-    - {fileID: 1685650442576747409, guid: eed94c064f5da1b40b1befb1b80671b7, type: 3}
-    count: 1
-    rate: 1
-  - name: Spider
-    enemy:
-    - {fileID: 987774355585922132, guid: e8514550da22b4e47a9b33f996d17313, type: 3}
-    count: 4
-    rate: 1.2
-  - name: SC
-    enemy:
-    - {fileID: 987774355585922132, guid: e8514550da22b4e47a9b33f996d17313, type: 3}
-    - {fileID: 8256667676729123529, guid: b31837c88a0771b4f863532fd75ce956, type: 3}
-    count: 5
-    rate: 1.2
-  - name: Bedbug
-    enemy:
-    - {fileID: 6203611079636139624, guid: 988584b7f8f8ecb469da19d67432d861, type: 3}
-    count: 1
-    rate: 1
-  - name: Bedbugs
-    enemy:
-    - {fileID: 6203611079636139624, guid: 988584b7f8f8ecb469da19d67432d861, type: 3}
-    count: 3
-    rate: 1.25
-  - name: ALL
-    enemy:
-    - {fileID: 5940178841227836429, guid: e6f691d90ebd2d94a85fb19b2ce6f200, type: 3}
-    - {fileID: 6203611079636139624, guid: 988584b7f8f8ecb469da19d67432d861, type: 3}
-    - {fileID: 8256667676729123529, guid: b31837c88a0771b4f863532fd75ce956, type: 3}
-    - {fileID: 3080780383693983152, guid: e18e15a9faeacec44b66fc6d77ddcf60, type: 3}
-    - {fileID: 5822097278806029720, guid: ad0d8b9337d18614a980fc1b3263f4a3, type: 3}
-    - {fileID: 52760017376938620, guid: f89efe243b4fc8f49873b1490598eaa1, type: 3}
-    - {fileID: 987774355585922132, guid: e8514550da22b4e47a9b33f996d17313, type: 3}
-    count: 10
-    rate: 0.75
-  - name: FROG TOAD
-    enemy:
-    - {fileID: 6175726780591606798, guid: 19699fc0694cde543b48694cae343f50, type: 3}
-    - {fileID: 3000955228926807053, guid: 15c9481f45b159a45bc5b7bbe9f62ecf, type: 3}
-    count: 2
-    rate: 2
-  - name: Monkey
-    enemy:
-    - {fileID: 8241611548767367327, guid: c58f246fb065a524cb7c0ce477c18459, type: 3}
-    count: 5
-    rate: 5
-  - name: MonC
-    enemy:
-    - {fileID: 8241611548767367327, guid: c58f246fb065a524cb7c0ce477c18459, type: 3}
-    - {fileID: 8256667676729123529, guid: b31837c88a0771b4f863532fd75ce956, type: 3}
-    count: 5
-    rate: 5
-  - name: Infected Mouse
-    enemy:
-    - {fileID: 8524963431825857709, guid: 650f734ce252fac498097bf3a7f3e6bd, type: 3}
-    count: 5
-    rate: 5
-  - name: ALL AGAIN
-    enemy:
-    - {fileID: 8524963431825857709, guid: 650f734ce252fac498097bf3a7f3e6bd, type: 3}
-    - {fileID: 5822097278806029720, guid: ad0d8b9337d18614a980fc1b3263f4a3, type: 3}
-    - {fileID: 3080780383693983152, guid: e18e15a9faeacec44b66fc6d77ddcf60, type: 3}
-    - {fileID: 8256667676729123529, guid: b31837c88a0771b4f863532fd75ce956, type: 3}
-    - {fileID: 6203611079636139624, guid: 988584b7f8f8ecb469da19d67432d861, type: 3}
-    - {fileID: 5940178841227836429, guid: e6f691d90ebd2d94a85fb19b2ce6f200, type: 3}
-    - {fileID: 987774355585922132, guid: e8514550da22b4e47a9b33f996d17313, type: 3}
-    - {fileID: 8241611548767367327, guid: c58f246fb065a524cb7c0ce477c18459, type: 3}
-    - {fileID: 52760017376938620, guid: f89efe243b4fc8f49873b1490598eaa1, type: 3}
-    count: 18
-    rate: 0.5
-  - name: Scorpion
-    enemy:
-    - {fileID: 5789032110996524514, guid: a37e15eee40d80f4a860a7599fd2c2ca, type: 3}
-    count: 25
-    rate: 0.5
-  spawnPoints:
-  - {fileID: 1334238299}
-  - {fileID: 89171298}
-  - {fileID: 568132433}
-  - {fileID: 1668918905}
-  - {fileID: 1121745112}
-  - {fileID: 1378344767}
-  - {fileID: 1566734213}
-  - {fileID: 1302838635}
-  timeBetweenWaves: 2
-  _waveNumberText: {fileID: 0}
-  wavesComplete: 0
-  winMenu: {fileID: 37169267}
-  winFirstButton: {fileID: 2012791580}
-  timeScript: {fileID: 0}
 --- !u!1 &607252711
 GameObject:
   m_ObjectHideFlags: 0

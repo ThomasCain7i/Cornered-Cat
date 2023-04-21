@@ -1,6 +1,6 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 using TMPro;
 
 public class WaveSpawner : MonoBehaviour
@@ -16,19 +16,29 @@ public class WaveSpawner : MonoBehaviour
         public float rate;
     }
 
+    //Wave array
     public Wave[] waves;
     private int nextWave = 0;
 
+    //Spawnpoints
     public Transform[] spawnPoints;
 
+    //How long between each wave
     public float timeBetweenWaves = 5f;
     private float waveCountdown;
 
     private float searchCountdown = 1f;
 
+    //Attempt at UI for wave names
     public TextMeshProUGUI _waveNumberText;
 
     private SpawnState state = SpawnState.COUNTING;
+
+    //Win stuff
+    public int wavesComplete = 0;
+    public GameObject winMenu;
+    public GameObject winFirstButton;
+    public TimeScript timeScript;
 
     void Start()
     {
@@ -75,6 +85,14 @@ public class WaveSpawner : MonoBehaviour
     void WaveCompleted()
     {
         Debug.Log("Wave Completed");
+
+        wavesComplete += 1;
+
+        if (wavesComplete == 21)
+        {
+            Win();
+            timeScript.StopStopwatch();
+        }
 
         state = SpawnState.COUNTING;
         waveCountdown = timeBetweenWaves;
@@ -132,4 +150,12 @@ public class WaveSpawner : MonoBehaviour
         //string[] numbers = { "One", "Two", "Three", "Four", "Five" };
         _waveNumberText.text = "Wave: " + _wave.name + "";	/// I added this line
 	}
+
+    void Win()
+    {
+            winMenu.SetActive(true);
+            Time.timeScale = 0f;
+            EventSystem.current.SetSelectedGameObject(null);
+            EventSystem.current.SetSelectedGameObject(winFirstButton);
+    }
 }

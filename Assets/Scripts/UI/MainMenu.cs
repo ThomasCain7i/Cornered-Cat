@@ -6,6 +6,7 @@ public class MainMenu : MonoBehaviour
 {
     public GameObject mainMenu, controlsMenu, difficultyMenu, kbmMenu, controllerMenu;
     public GameObject menuFirstButton, controlsFirstButton, controlsCloseButton, playFirstButton, playCloseButton, controllerFirstButton, kbmFirstButton;
+    public PauseMenu pauseMenu;
 
     public void Start()
     {
