@@ -20,7 +20,7 @@ public class Bullet : MonoBehaviour
     //Apply a force to this Rigidbody in direction of this GameObjects up axis
     void Update()
     {
-        rb.AddForce(transform.up * thrust / 100, ForceMode2D.Impulse);
+        rb.AddForce(transform.up * thrust / 10, ForceMode2D.Impulse);
     }
 
     private void OnTriggerEnter2D(Collider2D other)

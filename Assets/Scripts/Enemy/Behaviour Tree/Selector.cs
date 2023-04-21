@@ -1,6 +1,5 @@
 using BehaviourTree;
 using System.Collections.Generic;
-using static Unity.VisualScripting.Metadata;
 
 namespace BehaviourTree
 {
