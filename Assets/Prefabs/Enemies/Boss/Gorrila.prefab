@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 7011926160224762732}
   - component: {fileID: 3986207954897881975}
   m_Layer: 8
-  m_Name: Monkey
+  m_Name: Gorrila
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -21509881, guid: e3104db849059184b9ed030034bb3437, type: 3}
+  m_Sprite: {fileID: -1449620586, guid: 66bdbe54c283dd248bd1d6a18a6d22b7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -166,11 +166,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 8241611548767367321}
-  speed: 4
+  speed: 5
   stoppingDistance: 0
   retreatDistance: 0
-  startTimeBetweenShots: 1
-  projectile: {fileID: 6197507966303308635, guid: 26e6097536ffdb146bb08daf7c05a19a, type: 3}
+  startTimeBetweenShots: 0.3
+  projectile: {fileID: 6197507966303308635, guid: 906c698b7fae3c1409ee16050d278097, type: 3}
   player: {fileID: 0}
 --- !u!114 &8241611548767367301
 MonoBehaviour:
@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d53209dd27b1c243b4828863ee88dba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 3
+  maxHealth: 35
   currentHealth: 0
 --- !u!95 &7011926160224762732
 Animator:
@@ -196,7 +196,7 @@ Animator:
   m_GameObject: {fileID: 8241611548767367300}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 576224643a6b0334b8cbf436b50dd5ac, type: 2}
+  m_Controller: {fileID: 9100000, guid: e65441e8a6275ab4faa048b3555d83c9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -216,10 +216,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d4cdf8e64d7a55342a85132e47ce6d5f, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c4ffcce2cf171e14cb9dd3eed73e5dbb, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.149
-  m_Pitch: 1
+  m_Volume: 0.5
+  m_Pitch: 0.9
   Loop: 0
   Mute: 0
   Spatialize: 0

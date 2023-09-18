@@ -28,6 +28,11 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3);
     }
 
+    public void PlayGameMonkey()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 4);
+    }
+
     public void OpenControls()
     {
         //Set control menu to true, main menu to false and current button to back

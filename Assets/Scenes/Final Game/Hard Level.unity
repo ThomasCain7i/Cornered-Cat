@@ -2209,6 +2209,7 @@ MonoBehaviour:
   timeBetweenWaves: 2
   _waveNumberText: {fileID: 0}
   wavesComplete: 0
+  wavesWin: 21
   winMenu: {fileID: 37169267}
   winFirstButton: {fileID: 2012791580}
   timeScript: {fileID: 0}

@@ -36,6 +36,7 @@ public class WaveSpawner : MonoBehaviour
 
     //Win stuff
     public int wavesComplete = 0;
+    public int wavesWin = 0;
     public GameObject winMenu;
     public GameObject winFirstButton;
     public TimeScript timeScript;
@@ -88,7 +89,7 @@ public class WaveSpawner : MonoBehaviour
 
         wavesComplete += 1;
 
-        if (wavesComplete == 21)
+        if (wavesComplete == wavesWin)
         {
             Win();
             timeScript.StopStopwatch();

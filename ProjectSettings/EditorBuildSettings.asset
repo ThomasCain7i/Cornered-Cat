@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Final Game/Hard Level.unity
     guid: 3c7abe5b23824c04ca2b31dc22d1905a
+  - enabled: 1
+    path: Assets/Scenes/Final Game/Monkey Level.unity
+    guid: ce33b954475372d40b57e02c09d715a8
   m_configObjects: {}

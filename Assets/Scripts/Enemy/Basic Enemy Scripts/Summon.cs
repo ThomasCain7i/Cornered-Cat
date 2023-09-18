@@ -38,6 +38,7 @@ public class Summon : MonoBehaviour
         if(enemyHealth.currentHealth == 1)
         {
             controller.currentHealth = controller.maxHealth;
+            controller.healthBar.SetHealth(controller.currentHealth);
         }
     }
 }

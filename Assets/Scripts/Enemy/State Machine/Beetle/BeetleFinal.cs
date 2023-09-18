@@ -13,6 +13,7 @@ public class BeetleFinal : State
     public override State RunCurrentState()
     {
         controller.currentHealth = controller.maxHealth;
+        controller.healthBar.SetHealth(controller.currentHealth);
         GameObject.FindGameObjectWithTag("Enemy").GetComponent<BoxCollider2D>().enabled = true;
         GameObject.FindGameObjectWithTag("Enemy").GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
         return this;
